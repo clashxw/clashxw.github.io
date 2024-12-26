@@ -1,0 +1,174 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-31154.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>synchronized有几种用法？</title>
+        <meta name="description" content="在 Java 语言中，保证线程安全性的主要手段是加锁，而 Java 中的锁主要有两种：synchronized 和 Lock，我们今天重点来看一下 synchronized 的几种用法。 用法简介 使" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>synchronized有几种用法？</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<p>在 Java 语言中，保证线程安全性的主要手段是加锁，而 Java 中的锁主要有两种：synchronized 和 Lock，我们今天重点来看一下 synchronized 的几种用法。</p> <h2 id="用法简介">用法简介</h2> <p>使用 synchronized 无需手动执行加锁和释放锁的操作，我们只需要声明 synchronized 关键字就可以了，JVM 层面会帮我们自动的进行加锁和释放锁的操作。<br /> synchronized 可用于修饰<strong>普通方法、静态方法和代码块</strong>，接下来我们分别来看。</p> <h2 id="1修饰普通方法">1、修饰普通方法</h2> <p>synchronized 修饰普通方法的用法如下：</p> <pre><code class="language-java">/**  * synchronized 修饰普通方法  */ public synchronized void method() {     // .... }</code></pre> <p>当 synchronized 修饰普通方法时，被修饰的方法被称为同步方法，其作用范围是整个方法，作用的对象是调用这个方法的对象。</p> <h2 id="2修饰静态方法">2、修饰静态方法</h2> <p>synchronized 修饰静态方法和修饰普通方法类似，它的用法如下：</p> <pre><code class="language-java">/**  * synchronized 修饰静态方法  */ public static synchronized void staticMethod() {     // ....... }</code></pre> <p>当 synchronized 修饰静态方法时，其作用范围是整个程序，这个锁对于所有调用这个锁的对象都是互斥的。</p> <blockquote> <p>所谓的互斥，指的是同一时间只能有一个线程能使用，其他线程只能排队等待。</p> </blockquote> <h3 id="修饰普通方法-vs-修饰静态方法">修饰普通方法 VS 修饰静态方法</h3> <p>synchronized 修饰普通方法和静态方法看似相同，但二者完全不同，<strong>对于静态方法来说 synchronized 加锁是全局的，也就是整个程序运行期间，所有调用这个静态方法的对象都是互斥的，而普通方法是针对对象级别的，不同的对象对应着不同的锁</strong>，比如以下代码，同样是调用两次方法，但锁的获取完全不同，实现代码如下：</p> <pre><code class="language-java">import java.time.LocalDateTime; import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors; import java.util.concurrent.TimeUnit;  public class SynchronizedUsage {     public static void main(String[] args) throws InterruptedException {         // 创建线程池同时执行任务         ExecutorService threadPool = Executors.newFixedThreadPool(10);          // 执行两次静态方法         threadPool.execute(() -&gt; {             staticMethod();         });         threadPool.execute(() -&gt; {             staticMethod();         });                  // 执行两次普通方法         threadPool.execute(() -&gt; {             SynchronizedUsage usage = new SynchronizedUsage();             usage.method();         });         threadPool.execute(() -&gt; {             SynchronizedUsage usage2 = new SynchronizedUsage();             usage2.method();         });     }      /**      * synchronized 修饰普通方法      * 本方法的执行需要 3s（因为有 3s 的休眠时间）      */     public synchronized void method() {         System.out.println("普通方法执行时间：" + LocalDateTime.now());         try {             // 休眠 3s             TimeUnit.SECONDS.sleep(3);         } catch (InterruptedException e) {             e.printStackTrace();         }     }      /**      * synchronized 修饰静态方法      * 本方法的执行需要 3s（因为有 3s 的休眠时间）      */     public static synchronized void staticMethod() {         System.out.println("静态方法执行时间：" + LocalDateTime.now());         try {             // 休眠 3s             TimeUnit.SECONDS.sleep(3);         } catch (InterruptedException e) {             e.printStackTrace();         }     } }</code></pre> <p>以上程序的执行结果如下：<br /><img decoding="async" src="https://cdn.nlark.com/yuque/0/2022/png/92791/1643426201331-a9d1c594-1ad6-4366-8384-28ff1ffaed01.png#clientId=u641792d8-6acd-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=239&amp;id=ub22028cf&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=478&amp;originWidth=2001&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=96015&amp;status=done&amp;style=none&amp;taskId=u0be2eabc-b115-4203-9b64-95f9479ae39&amp;title=&amp;width=1000.5" alt="image.png"><br /> 从上述结果可以看出，<strong>静态方法加锁是全局的，针对的是所有调用者；而普通方法加锁是对象级别的，不同的对象拥有的锁也不同。</strong></p> <h2 id="3修饰代码块">3、修饰代码块</h2> <p>我们在日常开发中，最常用的是给代码块加锁，而不是给方法加锁，因为给方法加锁，相当于给整个方法全部加锁，这样的话锁的粒度就太大了，程序的执行性能就会受到影响，所以通常情况下，我们会使用 synchronized 给代码块加锁，它的实现语法如下：</p> <pre><code class="language-java">public void classMethod() throws InterruptedException {     // 前置代码...          // 加锁代码     synchronized (SynchronizedUsage.class) {         // ......     }          // 后置代码... }</code></pre> <p>从上述代码我们可以看出，相比于修饰方法，修饰代码块需要自己手动指定加锁对象，加锁的对象通常使用 this 或 xxx.class 这样的形式来表示，比如以下代码：</p> <pre><code class="language-java">// 加锁某个类 synchronized (SynchronizedUsage.class) {     // ...... }  // 加锁当前类对象 synchronized (this) {     // ...... }</code></pre> <h3 id="this-vs-class">this VS class</h3> <p>使用 synchronized 加锁 this 和 xxx.class 是完全不同的，当加锁 this 时，表示用当前的对象进行加锁，每个对象都对应了一把锁；而当使用 xxx.class 加锁时，表示使用某个类（而非类实例）来加锁，它是应用程序级别的，是全局生效的，如以下代码所示：</p> <pre><code class="language-java">import java.time.LocalDateTime; import java.util.concurrent.ExecutorService; import java.util.concurrent.Executors; import java.util.concurrent.TimeUnit;  public class SynchronizedUsageBlock {     public static void main(String[] args) throws InterruptedException {         // 创建线程池同时执行任务         ExecutorService threadPool = Executors.newFixedThreadPool(10);          // 执行两次 synchronized(this)         threadPool.execute(() -&gt; {             SynchronizedUsageBlock usage = new SynchronizedUsageBlock();             usage.thisMethod();         });         threadPool.execute(() -&gt; {             SynchronizedUsageBlock usage2 = new SynchronizedUsageBlock();             usage2.thisMethod();         });          // 执行两次 synchronized(xxx.class)         threadPool.execute(() -&gt; {             SynchronizedUsageBlock usage3 = new SynchronizedUsageBlock();             usage3.classMethod();         });         threadPool.execute(() -&gt; {             SynchronizedUsageBlock usage4 = new SynchronizedUsageBlock();             usage4.classMethod();         });     }      /**      * synchronized(this) 加锁      * 本方法的执行需要 3s（因为有 3s 的休眠时间）      */     public void thisMethod() {         synchronized (this) {             System.out.println("synchronized(this) 加锁：" + LocalDateTime.now());             try {                 // 休眠 3s                 TimeUnit.SECONDS.sleep(3);             } catch (InterruptedException e) {                 e.printStackTrace();             }         }     }      /**      * synchronized(xxx.class) 加锁      * 本方法的执行需要 3s（因为有 3s 的休眠时间）      */     public void classMethod() {         synchronized (SynchronizedUsageBlock.class) {             System.out.println("synchronized(xxx.class) 加锁：" + LocalDateTime.now());             try {                 // 休眠 3s                 TimeUnit.SECONDS.sleep(3);             } catch (InterruptedException e) {                 e.printStackTrace();             }         }     } }</code></pre> <p>以上程序的执行结果如下：<br /><img decoding="async" src="https://cdn.nlark.com/yuque/0/2022/png/92791/1643427854702-67117bd9-8c40-4e68-9bce-7e1681f5f6f1.png#clientId=u641792d8-6acd-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=256&amp;id=u8c79dcac&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=511&amp;originWidth=1880&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=120107&amp;status=done&amp;style=none&amp;taskId=ua8131b2f-d24b-440c-95f1-f1170d8c5fb&amp;title=&amp;width=940" alt="image.png"></p> <h2 id="总结">总结</h2> <p>synchronized 用 3 种用法，用它可以来修饰普通方法、静态方法和代码块，其中最常用的是修饰代码块，而修饰代码块时需要指定一个加锁对象，这个加锁对象通常使用 this 或 xxx.class 来表示，当使用 this 时，表示使用当前对象来加锁，而使用 class 时，表示表示使用某个类（非类对象实例）来加锁，它是全局生效的。</p> <blockquote></blockquote> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-30713.htm">宠物疫苗自己打可以吗（宠物疫苗自己打可以吗现在）</a></p>
+                                        <p>下一个：<a href="/news/article-31155.htm">vue实力踩坑 当前页push当前页无效的解决_vue.js_</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-24-node-share-links.htm" title="12月24日→21.9M/S|2025年最新免费节点Clash XW订阅链接地址">12月24日→21.9M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-30233.htm" title="考拉王国儿童乐园加盟（考拉王国logo图片）">考拉王国儿童乐园加盟（考拉王国logo图片）</a></li>
+                        <li class="py-2"><a href="/news/article-31155.htm" title="vue实力踩坑 当前页push当前页无效的解决_vue.js_">vue实力踩坑 当前页push当前页无效的解决_vue.js_</a></li>
+                        <li class="py-2"><a href="/news/article-30134.htm" title="宠物领养平台app推荐哪个好用 宠物领养平台app推荐哪个好用点">宠物领养平台app推荐哪个好用 宠物领养平台app推荐哪个好用点</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-23-node-share.htm" title="12月23日→22.9M/S|2024年最新免费节点V2rayU Node订阅链接地址">12月23日→22.9M/S|2024年最新免费节点V2rayU Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-free-node-subscribe-links.htm" title="12月25日→20.1M/S|2025年最新免费节点Clash XW订阅链接地址">12月25日→20.1M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-30712.htm" title="SpringBoot打包所有依赖jar包和配置文件全部分离">SpringBoot打包所有依赖jar包和配置文件全部分离</a></li>
+                        <li class="py-2"><a href="/news/article-30133.htm" title="ONVIF开发（2）vs2013编译openssl库">ONVIF开发（2）vs2013编译openssl库</a></li>
+                        <li class="py-2"><a href="/news/article-31154.htm" title="synchronized有几种用法？">synchronized有几种用法？</a></li>
+                        <li class="py-2"><a href="/news/article-30232.htm" title="vue axios请求分页器">vue axios请求分页器</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
