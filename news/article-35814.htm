@@ -1,0 +1,177 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-35814.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>spring boot 中使用 jpa以及jpa介绍</title>
+        <meta name="description" content="最近在项目中使用了一下jpa，发现还是挺好用的。这里就来讲一下jpa以及在spring boot中的使用。 在这里我们先来了解一下jpa。 1.什么是jpa呢？ JPA顾名思义就是Java Persi" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>spring boot 中使用 jpa以及jpa介绍</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>最近在项目中使用了一下jpa，发现还是挺好用的。这里就来讲一下jpa以及在spring boot中的使用。<br /> 在这里我们先来了解一下jpa。</p> <h2 id="1什么是jpa呢">1.什么是jpa呢？</h2> <pre><code>JPA顾名思义就是Java Persistence API的意思，是JDK 5.0注解或XML描述对象－关系表的映射关系，并将运行期的实体对象持久化到数据库中。</code></pre> <h2 id="2jpa具有什么优势">2.jpa具有什么优势？</h2> <pre><code>2.1标准化 JPA 是 JCP 组织发布的 Java EE 标准之一，因此任何声称符合 JPA 标准的框架都遵循同样的架构，提供相同的访问API，这保证了基于JPA开发的企业应用能够经过少量的修改就能够在不同的JPA框架下运行。 2.2容器级特性的支持 JPA框架中支持大数据集、事务、并发等容器级事务，这使得 JPA 超越了简单持久化框架的局限，在企业应用发挥更大的作用。 2.3简单方便 JPA的主要目标之一就是提供更加简单的编程模型：在JPA框架下创建实体和创建Java 类一样简单，没有任何的约束和限制，只需要使用 javax.persistence.Entity进行注释，JPA的框架和接口也都非常简单，没有太多特别的规则和设计模式的要求，开发者可以很容易的掌握。JPA基于非侵入式原则设计，因此可以很容易的和其它框架或者容器集成。 2.4查询能力 JPA的查询语言是面向对象而非面向数据库的，它以面向对象的自然语法构造查询语句，可以看成是Hibernate HQL的等价物。JPA定义了独特的JPQL（Java Persistence Query Language），JPQL是EJB QL的一种扩展，它是针对实体的一种查询语言，操作对象是实体，而不是关系数据库的表，而且能够支持批量更新和修改、JOIN、GROUP BY、HAVING 等通常只有 SQL 才能够提供的高级查询特性，甚至还能够支持子查询。 2.4高级特性 JPA 中能够支持面向对象的高级特性，如类之间的继承、多态和类之间的复杂关系，这样的支持能够让开发者最大限度的使用面向对象的模型设计企业应用，而不需要自行处理这些特性在关系数据库的持久化。</code></pre> <h2 id="3基于注解的使用">3.基于注解的使用</h2> <p>本篇只介绍注解的使用，另一种基于xml方式的使用大家有兴趣可以自行了解一下。</p> <h3 id="31-jpa拥有哪些注解呢">3.1 JPA拥有哪些注解呢？</h3> <table> <thead> <tr> <th align="left">注解</th> <th align="right">解释</th> </tr> </thead> <tbody> <tr> <td align="left">@Entity</td> <td align="right">声明类为实体或表。</td> </tr> <tr> <td align="left">@Table</td> <td align="right">声明表名。</td> </tr> <tr> <td align="left">@Basic</td> <td align="right">指定非约束明确的各个字段。</td> </tr> <tr> <td align="left">@Embedded</td> <td align="right">指定类或它的值是一个可嵌入的类的实例的实体的属性。</td> </tr> <tr> <td align="left">@Id</td> <td align="right">指定的类的属性，用于识别（一个表中的主键）。</td> </tr> <tr> <td align="left">@GeneratedValue</td> <td align="right">指定如何标识属性可以被初始化，例如自动、手动、或从序列表中获得的值。</td> </tr> <tr> <td align="left">@Transient</td> <td align="right">指定的属性，它是不持久的，即：该值永远不会存储在数据库中。</td> </tr> <tr> <td align="left">@Column</td> <td align="right">指定持久属性栏属性。</td> </tr> <tr> <td align="left">@SequenceGenerator</td> <td align="right">指定在@GeneratedValue注解中指定的属性的值。它创建了一个序列。</td> </tr> <tr> <td align="left">@TableGenerator</td> <td align="right">指定在@GeneratedValue批注指定属性的值发生器。它创造了的值生成的表。</td> </tr> <tr> <td align="left">@AccessType</td> <td align="right">这种类型的注释用于设置访问类型。如果设置@AccessType（FIELD），则可以直接访问变量并且不需要getter和setter，但必须为public。如果设置@AccessType（PROPERTY），通过getter和setter方法访问Entity的变量。</td> </tr> <tr> <td align="left">@JoinColumn</td> <td align="right">指定一个实体组织或实体的集合。这是用在多对一和一对多关联。</td> </tr> <tr> <td align="left">@UniqueConstraint</td> <td align="right">指定的字段和用于主要或辅助表的唯一约束。</td> </tr> <tr> <td align="left">@ColumnResult</td> <td align="right">参考使用select子句的SQL查询中的列名。</td> </tr> <tr> <td align="left">@ManyToMany</td> <td align="right">定义了连接表之间的多对多一对多的关系。</td> </tr> <tr> <td align="left">@ManyToOne</td> <td align="right">定义了连接表之间的多对一的关系。</td> </tr> <tr> <td align="left">@OneToMany</td> <td align="right">定义了连接表之间存在一个一对多的关系。</td> </tr> <tr> <td align="left">@OneToOne</td> <td align="right">定义了连接表之间有一个一对一的关系。</td> </tr> <tr> <td align="left">@NamedQueries</td> <td align="right">指定命名查询的列表。</td> </tr> <tr> <td align="left">@NamedQuery</td> <td align="right">指定使用静态名称的查询。</td> </tr> </tbody> </table> <p>了解了注解之后我们来看看如何使用吧</p> <h2 id="4代码实战">4.代码实战</h2> <h3 id="41maven依赖">4.1maven依赖</h3> <p>添加jpa起步依赖</p> <pre class="prettyprint"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>spring-boot-starter-data-jpa<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span></code></pre> <h3 id="42配置文件">4.2配置文件</h3> <p>在application.yml文件中添加如下配置</p> <pre class="prettyprint"><code class="hljs avrasm"><span class="hljs-label">spring:</span>   datasource:     url: jdbc:mysql://localhost:<span class="hljs-number">3306</span>/mytest     type:<span class="hljs-keyword">com</span><span class="hljs-preprocessor">.alibaba</span><span class="hljs-preprocessor">.druid</span><span class="hljs-preprocessor">.pool</span><span class="hljs-preprocessor">.DruidDataSource</span>     username: root     password: root     driver-class-name:<span class="hljs-keyword">com</span><span class="hljs-preprocessor">.mysql</span><span class="hljs-preprocessor">.jdbc</span><span class="hljs-preprocessor">.Driver</span> //驱动   jpa:     hibernate:       ddl-auto: update //自动更新     show-sql: true  //日志中显示sql语句</code></pre> <pre><code>jpa.hibernate.ddl-auto是hibernate的配置属性，其主要作用是：自动创建、更新、验证数据库表结构。该参数的几种配置如下：     ·create：每次加载hibernate时都会删除上一次的生成的表，然后根据你的model类再重新来生成新表，哪怕两次没有任何改变也要这样执行，这就是导致数据库表数据丢失的一个重要原因。     ·create-drop：每次加载hibernate时根据model类生成表，但是sessionFactory一关闭,表就自动删除。     ·update：最常用的属性，第一次加载hibernate时根据model类会自动建立起表的结构（前提是先建立好数据库），以后加载hibernate时根据model类自动更新表结构，即使表结构改变了但表中的行仍然存在不会删除以前的行。要注意的是当部署到服务器后，表结构是不会被马上建立起来的，是要等应用第一次运行起来后才会。     ·validate：每次加载hibernate时，验证创建数据库表结构，只会和数据库中的表进行比较，不会创建新表，但是会插入新值。</code></pre> <p>以上我们完成了基本的配置工作，记下来看一下如何进行表与实体的映射，以及数据访问接口。</p> <h3 id="43创建实体以及数据访问接口">4.3创建实体以及数据访问接口</h3> <p>首先来看一下实体类Person.java</p> <pre class="prettyprint"><code class="hljs java"><span class="hljs-annotation">@Entity</span><span class="hljs-annotation">@Getter</span><span class="hljs-annotation">@Setter</span><span class="hljs-keyword">public</span><span class="hljs-class"><span class="hljs-keyword">class</span><span class="hljs-title">Person</span> {<!-- --></span><span class="hljs-annotation">@Id</span><span class="hljs-annotation">@GeneratedValue</span><span class="hljs-keyword">private</span> Long id;<span class="hljs-annotation">@Column</span>(name =<span class="hljs-string">"name"</span>, nullable =<span class="hljs-keyword">true</span>, length =<span class="hljs-number">20</span>)<span class="hljs-keyword">private</span> String name;<span class="hljs-annotation">@Column</span>(name =<span class="hljs-string">"agee"</span>, nullable =<span class="hljs-keyword">true</span>, length =<span class="hljs-number">4</span>)<span class="hljs-keyword">private</span><span class="hljs-keyword">int</span> age; }</code></pre> <p>接着是PersonRepository.java，改接口只需要继承JpaRepository接口即可。</p> <pre class="prettyprint"><code class="hljs php"><span class="hljs-keyword">public</span><span class="hljs-class"><span class="hljs-keyword">interface</span><span class="hljs-title">PersonRepository</span><span class="hljs-keyword">extends</span><span class="hljs-title">JpaRepository</span>&lt;<span class="hljs-title">Person</span>,<span class="hljs-title">Long</span>&gt; {<!-- --></span> }</code></pre> <p>然后写一个rest接口以供测试使用。</p> <pre class="prettyprint"><code class="hljs java"><span class="hljs-annotation">@RestController</span><span class="hljs-annotation">@RequestMapping</span>(value =<span class="hljs-string">"person"</span>)<span class="hljs-keyword">public</span><span class="hljs-class"><span class="hljs-keyword">class</span><span class="hljs-title">PerconController</span> {<!-- --></span><span class="hljs-annotation">@Autowired</span><span class="hljs-keyword">private</span> PersonRepository personRepository;<span class="hljs-annotation">@PostMapping</span>(path =<span class="hljs-string">"addPerson"</span>)<span class="hljs-keyword">public</span><span class="hljs-keyword">void</span><span class="hljs-title">addPerson</span>(Person person) {         personRepository.save(person);     }<span class="hljs-annotation">@DeleteMapping</span>(path =<span class="hljs-string">"deletePerson"</span>)<span class="hljs-keyword">public</span><span class="hljs-keyword">void</span><span class="hljs-title">deletePerson</span>(Long id) {         personRepository.delete(id);     } }</code></pre> <p>好了，让我们来运行一下程序看看结果吧,启动程序，查询数据库我们就可以看到，JPA以及自动帮我们创建了表<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/b406e5aa4573744ba7db9be204d7f44b.jpg" alt="spring boot 中使用 jpa以及jpa介绍"></p> <p>接下来我们调用一下addPerson接口。我们使用postman来测试：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/44142a37d878ef13200d3592ce29e059.jpg" alt="spring boot 中使用 jpa以及jpa介绍"><br /> 然后通过查询数据库来看一下结果：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/0b7f5d22e242da35e60aec047d2df2a8.jpg" alt="spring boot 中使用 jpa以及jpa介绍"><br /> 我们可以看到成功插入了数据，并且观察表结构可以看到，agee是我们定义的column名称，id为自增。并且从上面的repository接口代码我们可以看到，接口中并没有定义任何的方法，这是因为JpaRepository中帮我们定义了基础的增删改查方法，可以很方便的直接使用。</p> <p>接下来我们来看一下如何编写自己的方法。我们以根据name查询person为例。添加一个rest接口</p> <pre class="prettyprint"><code class="hljs java"><span class="hljs-annotation">@GET</span><span class="hljs-annotation">@Produces</span>(TYPE_JSON)<span class="hljs-annotation">@Path</span>(<span class="hljs-string">"getPerson"</span>)<span class="hljs-keyword">public</span> Object<span class="hljs-title">getPerson</span>(@<span class="hljs-title">QueryParam</span>("name") String name) {<span class="hljs-keyword">return</span> personRepository.findByName(name);     }</code></pre> <p>并在repository接口中添加如下查询方法：</p> <pre class="prettyprint"><code class="hljs javascript">Person findByName(<span class="hljs-built_in">String</span> name);</code></pre> <p>重启之后让我们来看一下查询结果</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220604/f041493a1211d0b094a092ac6584c393.jpg" alt="spring boot 中使用 jpa以及jpa介绍"><br /> 我们可以看到通过name获取到了想要的结果。我们也可以在日志中看到hibernate输出的日志:</p> <pre><code>Hibernate: select person0_.id as id1_0_, person0_.agee as agee2_0_, person0_.name as name3_0_ from person person0_ where person0_.name=?</code></pre> <p>那么JPA是通过什么规则来根据方法名生成sql语句查询的呢？<br /> 其实JPA在这里遵循Convention over configuration（约定大约配置）的原则，遵循spring 以及JPQL定义的方法命名。Spring提供了一套可以通过命名规则进行查询构建的机制。这套机制会把方法名首先过滤一些关键字，比如 find…By, read…By, query…By, count…By 和 get…By 。系统会根据关键字将命名解析成2个子语句，第一个 By 是区分这两个子语句的关键词。这个 By 之前的子语句是查询子语句（指明返回要查询的对象），后面的部分是条件子语句。如果直接就是 findBy… 返回的就是定义Respository时指定的领域对象集合，同时JPQL中也定义了丰富的关键字：and、or、Between等等，下面我们来看一下JPQL中有哪些关键字：</p> <table> <thead> <tr> <th>Keyword</th> <th>Sample</th> <th>JPQL snippet</th> </tr> </thead> <tbody> <tr> <td>And</td> <td>findByLastnameAndFirstname</td> <td>… where x.lastname = ?1 and</td> </tr> <tr> <td>Or</td> <td>findByLastnameOrFirstname</td> <td>… where x.lastname = ?1 or x.firstname = ?2</td> </tr> <tr> <td>Is,Equals</td> <td>findByFirstnameIs,findByFirstnameEquals</td> <td>… where x.firstname = ?1</td> </tr> <tr> <td>Between</td> <td>findByStartDateBetween</td> <td>… where x.startDate between ?1 and ?2</td> </tr> <tr> <td>LessThan</td> <td>findByAgeLessThan</td> <td>… where x.age &lt; ?1</td> </tr> <tr> <td>LessThanEqual</td> <td>findByAgeLessThanEqual</td> <td>… where x.age ⇐ ?1</td> </tr> <tr> <td>GreaterThan</td> <td>findByAgeGreaterThan</td> <td>… where x.age &gt; ?1</td> </tr> <tr> <td>GreaterThanEqual</td> <td>findByAgeGreaterThanEqual</td> <td>… where x.age &gt;= ?1</td> </tr> <tr> <td>After</td> <td>findByStartDateAfter</td> <td>… where x.startDate &gt; ?1</td> </tr> <tr> <td>Before</td> <td>findByStartDateBefore</td> <td>… where x.startDate &lt; ?1</td> </tr> <tr> <td>IsNull</td> <td>findByAgeIsNull</td> <td>… where x.age is null</td> </tr> <tr> <td>IsNotNull,NotNull</td> <td>findByAge(Is)NotNull</td> <td>… where x.age not null</td> </tr> <tr> <td>Like</td> <td>findByFirstnameLike</td> <td>… where x.firstname like ?1</td> </tr> <tr> <td>NotLike</td> <td>findByFirstnameNotLike</td> <td>… where x.firstname not like ?1</td> </tr> <tr> <td>StartingWith</td> <td>findByFirstnameStartingWith</td> <td>… where x.firstname like ?1 (parameter bound with appended %)</td> </tr> <tr> <td>EndingWith</td> <td>findByFirstnameEndingWith</td> <td>… where x.firstname like ?1 (parameter bound with prepended %)</td> </tr> <tr> <td>Containing</td> <td>findByFirstnameContaining</td> <td>… where x.firstname like ?1 (parameter bound wrapped in %)</td> </tr> <tr> <td>OrderBy</td> <td>findByAgeOrderByLastnameDesc</td> <td>… where x.age = ?1 order by x.lastname desc</td> </tr> <tr> <td>Not</td> <td>findByLastnameNot</td> <td>… where x.lastname &lt;&gt; ?1</td> </tr> <tr> <td>In</td> <td>findByAgeIn(Collection ages)</td> <td>… where x.age in ?1</td> </tr> <tr> <td>NotIn</td> <td>findByAgeNotIn(Collection age)</td> <td>… where x.age not in ?1</td> </tr> <tr> <td>TRUE</td> <td>findByActiveTrue()</td> <td>… where x.active = true</td> </tr> <tr> <td>FALSE</td> <td>findByActiveFalse()</td> <td>… where x.active = false</td> </tr> <tr> <td>IgnoreCase</td> <td>findByFirstnameIgnoreCase</td> <td>… where UPPER(x.firstame) = UPPER(?1)</td> </tr> <tr> <td>……</td> <td></td> <td></td> </tr> </tbody> </table> <p>以上就是jpa的简单实用和介绍。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-35259.htm">河南宠物疫苗 河南宠物疫苗上市公司</a></p>
+                                        <p>下一个：<a href="/news/article-35815.htm">免费领养宠物有套路吗?（免费领养宠物的平台是真的吗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-31-node-share-links.htm" title="12月31日→18.3M/S|2025年最新免费节点Clash XW订阅链接地址">12月31日→18.3M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-34032.htm" title="动物疫苗分几种类型 动物疫苗分几种类型的">动物疫苗分几种类型 动物疫苗分几种类型的</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-27-free-high-speed-nodes.htm" title="12月27日→18.1M/S|2025年最新免费节点Clash XW订阅链接地址">12月27日→18.1M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-33560.htm" title="同城免费领养宠物的软件有哪些（同城领养宠物的app）">同城免费领养宠物的软件有哪些（同城领养宠物的app）</a></li>
+                        <li class="py-2"><a href="/news/article-34503.htm" title="猫疫苗去宠物店打还是宠物医院打好呢（猫疫苗去宠物店打还是宠物医院打好呢视频）">猫疫苗去宠物店打还是宠物医院打好呢（猫疫苗去宠物店打还是宠物医院打好呢视频）</a></li>
+                        <li class="py-2"><a href="/news/article-35814.htm" title="spring boot 中使用 jpa以及jpa介绍">spring boot 中使用 jpa以及jpa介绍</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-29-free-node-subscribe-links.htm" title="12月29日→20.3M/S|2025年最新免费节点Clash XW订阅链接地址">12月29日→20.3M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-31155.htm" title="vue实力踩坑 当前页push当前页无效的解决_vue.js_">vue实力踩坑 当前页push当前页无效的解决_vue.js_</a></li>
+                        <li class="py-2"><a href="/news/article-33561.htm" title="河南省兽药前十名企业（河南兽药50强企业名单）">河南省兽药前十名企业（河南兽药50强企业名单）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-2-node-share.htm" title="1月2日→22.4M/S|2025年最新免费节点Clash XW订阅链接地址">1月2日→22.4M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
