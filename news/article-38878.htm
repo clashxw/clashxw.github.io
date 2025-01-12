@@ -1,0 +1,176 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-38878.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>字符串逆序(递归实现)</title>
+        <meta name="description" content="题目即要求  字符串逆序(递归实现),不能使用C函数库中的字符串操作函数。 char arr [] =“abedef” 逆序之后数组的内容变成: fedcba  先分析题目,如果不用递归如何实现? 双" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>字符串逆序(递归实现)</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-kimbie-light"> <h2> <a id="_0" rel="nofollow"></a>题目即要求</h2> <blockquote> <p>字符串逆序(递归实现),不能使用C函数库中的字符串操作函数。 char arr [] =“abedef” 逆序之后数组的内容变成: fedcba</p> </blockquote> <p>先分析题目,如果不用递归如何实现?</p> <p><strong>双指针,一个从头走,一个从尾走,交换两个元素,直接贴代码</strong></p> <pre><code class="prism language-c"><span class="token keyword">void</span> <span class="token function">reverse_string2</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	<span class="token keyword">int</span> len<span class="token operator">=</span><span class="token function">strlen</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token keyword">int</span> left<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>right<span class="token operator">=</span>len<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> 	 	<span class="token keyword">while</span><span class="token punctuation">(</span>left<span class="token operator">&lt;</span>right<span class="token punctuation">)</span><span class="token comment">//&lt;=都可,因为当left&gt;right或是=right时,一个元素或者小于一个元素的交换都一样  </span> 	<span class="token punctuation">{<!-- --></span> 		<span class="token comment">//交换左右变量 </span> 		<span class="token keyword">int</span> temp<span class="token operator">=</span>arr<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">;</span> 		arr<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token punctuation">;</span> 		arr<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token operator">=</span>temp<span class="token punctuation">;</span> 		 		left<span class="token operator">++</span><span class="token punctuation">;</span> 		right<span class="token operator">--</span><span class="token punctuation">;</span> 	<span class="token punctuation">}</span>  <span class="token punctuation">}</span> </code></pre> <p><strong>那么,问题来了,用递归怎么实现呢.先来看下我画的粗略图:(</strong></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230223/28d175a76931dd14d95039fb0983c56c.jpg" alt="字符串逆序(递归实现)"></p> <p><strong>依次解释下操作</strong></p> <ol> <li> <strong>将第一个元素存放在临时变量中</strong>.</li> <li><strong>将最后一个元素放在首位</strong></li> <li><strong>将最后一个元素的位置置为\0,表明字符串结束位置</strong></li> <li><strong>开始递归,将当前指针向后指一位,如图,a-b</strong></li> <li><strong>从后一位开始递归,重复上述操作,因为表明了字符串结束位置,所以是从b-e的遍历</strong></li> <li><strong>此时将最后一个元素,也就是\0,替换成临时变量中的第一个元素</strong></li> </ol> <h2> <a id="_39" rel="nofollow"></a>注意</h2> <ul> <li><strong>第三步和第五步不能反,必须是第三步在第五步前,否则就会变成b-a(a已经同f交换过),而达不到我们想要的效果</strong></li> <li><strong>接着,因为此处是递归,递归的两个基本条件,只满足了一个逐渐逼近条件,却没有写结束递归的条件</strong></li> </ul> <p><strong>这里递归的结束条件就是数组的长度要大于等于2,因为小于2的逆序没有意义.</strong></p> <p><strong>下面是代码</strong></p> <pre><code class="prism language-c"><span class="token keyword">void</span> <span class="token function">reverse_string</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	<span class="token keyword">char</span> temp<span class="token operator">=</span><span class="token operator">*</span>arr<span class="token punctuation">;</span><span class="token comment">//首元素存放好 </span> 	<span class="token keyword">int</span> len<span class="token operator">=</span><span class="token function">strlen</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span> 	<span class="token operator">*</span>arr<span class="token operator">=</span><span class="token operator">*</span><span class="token punctuation">(</span>arr<span class="token operator">+</span>len<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//最后一个元素到首位 </span> 	<span class="token operator">*</span><span class="token punctuation">(</span>arr<span class="token operator">+</span>len<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token string">'\0'</span><span class="token punctuation">;</span><span class="token comment">//最后一个元素等于\0,给定下次遍历的右范围 </span> 	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">strlen</span><span class="token punctuation">(</span>arr<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">&gt;=</span><span class="token number">2</span><span class="token punctuation">)</span> 	<span class="token punctuation">{<!-- --></span> 		<span class="token function">reverse_string</span><span class="token punctuation">(</span>arr<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//给定下次遍历的左范围 </span> 	<span class="token punctuation">}</span>	 	 	<span class="token operator">*</span><span class="token punctuation">(</span>arr<span class="token operator">+</span>len<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">=</span>temp<span class="token punctuation">;</span><span class="token comment">//把当前的最后元素,也就是\0,替换成首元素 </span> <span class="token punctuation">}</span> </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-38385.htm">动物疫苗打到人身上会怎么样 动物疫苗打到人身上会怎么样吗</a></p>
+                                        <p>下一个：<a href="/news/article-38879.htm">Springboot @Order注解正确用法</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-37878.htm" title="图解：冒泡排序及其优化">图解：冒泡排序及其优化</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-4-node-share.htm" title="1月4日→19.1M/S|2025年最新免费节点Clash XW订阅链接地址">1月4日→19.1M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-free-node-subscribe-links.htm" title="1月7日→22.2M/S|2025年最新免费节点Clash/SSR/V2ray/Shadowrocket订阅链接地址">1月7日→22.2M/S|2025年最新免费节点Clash/SSR/V2ray/Shadowrocket订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-3-node-share-links.htm" title="1月3日→21.5M/S|2025年最新免费节点Clash XW订阅链接地址">1月3日→21.5M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-10-free-node-subscribe.htm" title="1月10日→22.9M/S|2025年最新免费节点V2ray/Clash/SSR/Shadowrocket订阅链接地址">1月10日→22.9M/S|2025年最新免费节点V2ray/Clash/SSR/Shadowrocket订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-33084.htm" title="线程同步安全问题及其解决">线程同步安全问题及其解决</a></li>
+                        <li class="py-2"><a href="/news/article-33561.htm" title="河南省兽药前十名企业（河南兽药50强企业名单）">河南省兽药前十名企业（河南兽药50强企业名单）</a></li>
+                        <li class="py-2"><a href="/news/article-31666.htm" title="网络协议之:Domain name service DNS详解_在线工具">网络协议之:Domain name service DNS详解_在线工具</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-23-node-share.htm" title="12月23日→22.9M/S|2024年最新免费节点V2rayU Node订阅链接地址">12月23日→22.9M/S|2024年最新免费节点V2rayU Node订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-node-share.htm" title="1月9日→19.7M/S|2025年最新免费节点SSR/Shadowrocket/Clash/V2ray订阅链接地址">1月9日→19.7M/S|2025年最新免费节点SSR/Shadowrocket/Clash/V2ray订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">36</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
