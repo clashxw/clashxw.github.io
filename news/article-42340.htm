@@ -1,0 +1,187 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-42340.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@RequestBody接受参数报415错误</title>
+        <meta name="description" content="1.简介 @RequestBody 作用： 1)&nbsp;该注解用于读取Request请求的body部分数据，使用系统默认配置的HttpMessageConverter进行解析，然后把相应的数据绑定" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash XW免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxw.github.io/news/article-42340.htm" />
+    <meta property="og:site_name" content="Clash XW免费机场节点分享官网" />
+    <meta property="og:title" content="@RequestBody接受参数报415错误" />
+    <meta property="og:image" content="https://clashxw.github.io/uploads/20241223/b5e0dc2a381ba2dcd27debb26971f53e.webp" />
+        <meta property="og:release_date" content="2025-01-18T07:14:05" />
+    <meta property="og:updated_time" content="2025-01-18T07:14:05" />
+        <meta property="og:description" content="1.简介 @RequestBody 作用： 1)&nbsp;该注解用于读取Request请求的body部分数据，使用系统默认配置的HttpMessageConverter进行解析，然后把相应的数据绑定" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>@RequestBody接受参数报415错误</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div class="artical-content-bak main-content editor-side-new"> <div class="con editor-preview-side" id="result"> <h2 style="font-family:'Microsoft YaHei';line-height:26px;color:rgb(102,102,102);font-size:22px;border:0px;vertical-align:baseline;"><span style="font-family:SimSun;font-weight:normal;border:0px;font-size:18px;vertical-align:baseline;">1.简介</span></h2> <h2 style="font-family:'Microsoft YaHei';line-height:26px;color:rgb(102,102,102);font-size:22px;border:0px;vertical-align:baseline;"><span style="font-weight:normal;border:0px;vertical-align:baseline;color:rgb(255,0,0);"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;">@RequestBody</span></span></h2> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;"><strong style="border:0px;font-size:16px;vertical-align:baseline;">作用</strong>：<br /></span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;"><strong style="border:0px;font-size:16px;vertical-align:baseline;"><span style="font-family:'Microsoft YaHei';font-weight:normal;border:0px;vertical-align:baseline;color:rgb(51,51,255);">1)</span></strong>&nbsp;该注解用于读取Request请求的body部分数据，使用系统默认配置的HttpMessageConverter进行解析，然后把相应的数据绑定到要返回的对象上；</span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;"><strong style="border:0px;font-size:16px;vertical-align:baseline;"><span style="font-family:'Microsoft YaHei';font-weight:normal;border:0px;vertical-align:baseline;color:rgb(51,51,255);">2)</span></strong>&nbsp;再把HttpMessageConverter返回的对象数据绑定到 controller中方法的参数上。<br /></span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;"><strong style="border:0px;font-size:16px;vertical-align:baseline;">使用时机</strong>：</span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;"><strong style="border:0px;font-size:16px;vertical-align:baseline;"><span style="font-family:'Microsoft YaHei';font-weight:normal;border:0px;vertical-align:baseline;color:rgb(51,51,255);">1)</span></strong>&nbsp;GET、POST方式提时， 根据request header Content-Type的值来判断:</span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;">A.application/x-www-form-urlencoded， 可选（即非必须，因为这种情况的数据@RequestParam, @ModelAttribute也可以处理，当然@RequestBody也能处理）；</span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;">B.multipart/form-data, 不能处理（即使用@RequestBody不能处理这种格式的数据）；</span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;">C.其他格式， 必须（其他格式包括application/json, application/xml等。这些格式的数据，必须使用@RequestBody来处理）；</span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;"><strong style="border:0px;font-size:16px;vertical-align:baseline;"><span style="font-family:'Microsoft YaHei';font-weight:normal;border:0px;vertical-align:baseline;color:rgb(51,51,255);">2)</span></strong>&nbsp;PUT方式提交时， 根据request header Content-Type的值来判断:</span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;">A.application/x-www-form-urlencoded， 必须；</span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;">B.multipart/form-data, 不能处理；</span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;">C.其他格式， 必须；</span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="border:0px;vertical-align:baseline;line-height:26px;"><strong style="border:0px;font-size:16px;vertical-align:baseline;"><span style="font-family:SimSun;font-weight:normal;border:0px;font-size:18px;vertical-align:baseline;"><span style="font-family:'Microsoft YaHei';border:0px;vertical-align:baseline;color:rgb(255,0,0);">说明</span>：</span></strong></span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="border:0px;vertical-align:baseline;line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;">request的body部分的数据编码格式由header部分的Content-Type指定；</span></span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="border:0px;vertical-align:baseline;line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;">requestBody接收的是JSON对象的字符串，AJAX传递数据使用的是JSON，所以需要使用JSON.stringify()转化为JSON字符串，从而被requestBody接收。</span></span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="border:0px;vertical-align:baseline;line-height:26px;"><strong style="border:0px;font-size:16px;vertical-align:baseline;"><span style="font-weight:normal;border:0px;vertical-align:baseline;color:rgb(255,0,0);"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;">@ResponseBody</span></span></strong></span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;"><strong style="border:0px;font-size:16px;vertical-align:baseline;">作用</strong>：<br /></span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;"><span style="font-family:'Microsoft YaHei';border:0px;vertical-align:baseline;"></span>该注解用于将Controller的方法返回的对象，通过适当的HttpMessageConverter转换为指定格式后，写入到Response对象的body数据区。<br /></span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;"><strong style="border:0px;font-size:16px;vertical-align:baseline;">使用时机</strong>：</span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;"><span style="font-family:'Microsoft YaHei';border:0px;vertical-align:baseline;"></span>返回的数据不是html标签的页面，而是其他某种格式的数据时（如json、xml等）使用；</span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><strong style="border:0px;font-size:16px;vertical-align:baseline;"><span style="font-family:SimSun;font-weight:normal;border:0px;font-size:18px;vertical-align:baseline;"><br /></span></strong></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><strong style="border:0px;font-size:16px;vertical-align:baseline;"><span style="font-family:SimSun;font-weight:normal;border:0px;font-size:18px;vertical-align:baseline;">2.Spring MVC的配置文件</span></strong></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;">增加&lt;mvc:annotation-driven /&gt;配置<br /></span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="border:0px;vertical-align:baseline;line-height:26px;"><strong style="border:0px;font-size:16px;vertical-align:baseline;"><span style="font-family:SimSun;font-weight:normal;border:0px;font-size:18px;vertical-align:baseline;"><br /></span></strong></span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="border:0px;vertical-align:baseline;line-height:26px;"><strong style="border:0px;font-size:16px;vertical-align:baseline;"><span style="font-family:SimSun;font-weight:normal;border:0px;font-size:18px;vertical-align:baseline;">3.需要的jar包</span></strong></span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;">在Maven中增加依赖</span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;">Spring-webmvc 和 &nbsp;jsckson-mapper-asl</span></p> <p style="font-family:'Microsoft YaHei';border:0px;font-size:15px;vertical-align:baseline;color:rgb(102,102,102);line-height:26px;"><span style="font-family:SimSun;border:0px;font-size:18px;vertical-align:baseline;"><strong style="border:0px;font-size:16px;vertical-align:baseline;"><span style="font-family:'Microsoft YaHei';font-weight:normal;border:0px;vertical-align:baseline;color:rgb(255,0,0);">注：</span>在jsp中使用ajax提交时出现了下面的问题： 415 (Unsupported Media Type), 可能出现的原因如下:</strong><br />1. dataParam 格式错误，不符合json字符串规范<br />2. dataParam 参数不能绑定到控制器方法的参数上面，不是一一对应<br />3. 没有在ajax提交时设置contentType<br />contentType指的是前台传递到后台的格式，dataType指的是由后台传到前台的格式<br /><strong>4. jackson的jar包不对或者不全：<br />不应该使用org.codehaus.jackson下面的jackson.jar, 应该使用</strong>com.fasterxml.jackson.core下面的jackson-core和jackson-databind 的jar包<br />5. 加上&lt;mvc annotation-driven&gt;</span></p> <p></p> </div> </div> <p>转载于:https://blog.51cto.com/7629052/1927256</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-41837.htm">自从养了猫运气就一直不好（养猫最忌讳的一个生肖）</a></p>
+                                        <p>下一个：<a href="/news/article-42341.htm">动物疫苗价格表最新消息图片大全视频（动物疫苗接种时间表）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-38878.htm" title="字符串逆序(递归实现)">字符串逆序(递归实现)</a></li>
+                        <li class="py-2"><a href="/news/article-35259.htm" title="河南宠物疫苗 河南宠物疫苗上市公司">河南宠物疫苗 河南宠物疫苗上市公司</a></li>
+                        <li class="py-2"><a href="/news/article-30712.htm" title="SpringBoot打包所有依赖jar包和配置文件全部分离">SpringBoot打包所有依赖jar包和配置文件全部分离</a></li>
+                        <li class="py-2"><a href="/news/article-36320.htm" title="南京宠物送养（南京宠物领养吧）">南京宠物送养（南京宠物领养吧）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-2-node-share.htm" title="1月2日→22.4M/S|2025年最新免费节点Clash XW订阅链接地址">1月2日→22.4M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-26-free-subscribe-node.htm" title="12月26日→20.3M/S|2025年最新免费节点Clash XW订阅链接地址">12月26日→20.3M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-34031.htm" title="领养宠物狗是什么意思啊英文（领养狗狗是什么意思?）">领养宠物狗是什么意思啊英文（领养狗狗是什么意思?）</a></li>
+                        <li class="py-2"><a href="/news/article-36428.htm" title="动物医院有哪些动物 动物医院有哪些动物名字">动物医院有哪些动物 动物医院有哪些动物名字</a></li>
+                        <li class="py-2"><a href="/news/article-30232.htm" title="vue axios请求分页器">vue axios请求分页器</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-free-node-subscribe-links.htm" title="1月8日→18.7M/S|2025年最新免费节点Shadowrocket/Clash/SSR/V2ray订阅链接地址">1月8日→18.7M/S|2025年最新免费节点Shadowrocket/Clash/SSR/V2ray订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
