@@ -1,4 +1,4 @@
-# 1月18日→18.6M/S|2025年最新免费节点Shadowrocket/SSR/Clash/V2ray订阅链接地址  更新时间 2025-01-18 07:18:13
+# 1月19日→19.2M/S|2025年最新免费节点Shadowrocket/SSR/Clash/V2ray订阅链接地址  更新时间 2025-01-19 07:13:35
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashxw.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://clashxw.github.io/uploads/2025/01/0-20250118.yaml
-- https://clashxw.github.io/uploads/2025/01/1-20250118.yaml
-- https://clashxw.github.io/uploads/2025/01/2-20250118.yaml
-- https://clashxw.github.io/uploads/2025/01/3-20250118.yaml
-- https://clashxw.github.io/uploads/2025/01/4-20250118.yaml
+- https://clashxw.github.io/uploads/2025/01/0-20250119.yaml
+- https://clashxw.github.io/uploads/2025/01/1-20250119.yaml
+- https://clashxw.github.io/uploads/2025/01/2-20250119.yaml
+- https://clashxw.github.io/uploads/2025/01/3-20250119.yaml
+- https://clashxw.github.io/uploads/2025/01/4-20250119.yaml
 
 ### V2ray订阅链接
 
-- https://clashxw.github.io/uploads/2025/01/0-20250118.txt
-- https://clashxw.github.io/uploads/2025/01/1-20250118.txt
-- https://clashxw.github.io/uploads/2025/01/2-20250118.txt
-- https://clashxw.github.io/uploads/2025/01/3-20250118.txt
-- https://clashxw.github.io/uploads/2025/01/4-20250118.txt
+- https://clashxw.github.io/uploads/2025/01/0-20250119.txt
+- https://clashxw.github.io/uploads/2025/01/1-20250119.txt
+- https://clashxw.github.io/uploads/2025/01/2-20250119.txt
+- https://clashxw.github.io/uploads/2025/01/3-20250119.txt
+- https://clashxw.github.io/uploads/2025/01/4-20250119.txt
 
 ### Sing-box订阅链接
 
-- https://clashxw.github.io/uploads/2025/01/20250118.json
+- https://clashxw.github.io/uploads/2025/01/20250119.json
 
 ## 更多clash节点订阅 ：
 
