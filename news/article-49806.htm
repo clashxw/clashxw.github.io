@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-49806.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>我们如何在MySQL SELECT查询中将组函数与非组字段一起使用？</title>
+        <meta name="description" content="如果要在SELECT查询中将组函数与非组字段一起使用，则必须使用GROUP BY子句。通用语法如下 语法 SELECT&nbsp;group_function1,…,&nbsp;non-group-c" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash XW免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxw.github.io/news/article-49806.htm" />
+    <meta property="og:site_name" content="Clash XW免费机场节点分享官网" />
+    <meta property="og:title" content="我们如何在MySQL SELECT查询中将组函数与非组字段一起使用？" />
+    <meta property="og:image" content="https://clashxw.github.io/uploads/20241223/d798eed131f30cd11bc63de42929e690.webp" />
+        <meta property="og:release_date" content="2025-02-02T09:26:10" />
+    <meta property="og:updated_time" content="2025-02-02T09:26:10" />
+        <meta property="og:description" content="如果要在SELECT查询中将组函数与非组字段一起使用，则必须使用GROUP BY子句。通用语法如下 语法 SELECT&nbsp;group_function1,…,&nbsp;non-group-c" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="我们如何在MySQL SELECT查询中将组函数与非组字段一起使用？">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>我们如何在MySQL SELECT查询中将组函数与非组字段一起使用？</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<p>如果要在SELECT查询中将组函数与非组字段一起使用，则必须使用GROUP BY子句。通用语法如下</p> <h2>语法</h2> <pre>SELECT&nbsp;group_function1,…,&nbsp;non-group-column1,…&nbsp;from&nbsp;table_name&nbsp;GROUP&nbsp;BY&nbsp;column_name;</pre> <h2>示例</h2> <pre>mysql&gt;&nbsp;Select&nbsp;COUNT(*),&nbsp;id&nbsp;from&nbsp;Student&nbsp;GROUP&nbsp;BY&nbsp;id; +----------+------+ |&nbsp;COUNT(*)&nbsp;|&nbsp;id&nbsp;&nbsp;&nbsp;| +----------+------+ |&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;| |&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;| |&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;15&nbsp;&nbsp;&nbsp;| |&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;17&nbsp;&nbsp;&nbsp;| |&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;20&nbsp;&nbsp;&nbsp;| +----------+------+ 5&nbsp;rows&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)  mysql&gt;&nbsp;Select&nbsp;COUNT(*),&nbsp;address&nbsp;from&nbsp;Student&nbsp;GROUP&nbsp;BY&nbsp;id; +----------+---------+ |&nbsp;COUNT(*)&nbsp;|&nbsp;address&nbsp;| +----------+---------+ |&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Delhi&nbsp;&nbsp;&nbsp;| |&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Mumbai&nbsp;&nbsp;| |&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Delhi&nbsp;&nbsp;&nbsp;| |&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Shimla&nbsp;&nbsp;| |&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;Jaipur&nbsp;&nbsp;| +----------+---------+ 5&nbsp;rows&nbsp;in&nbsp;set&nbsp;(0.00&nbsp;sec)</pre> <p>GROUP BY子句之后的字段可以与SELECT查询中给定的非组字段不同。</p> <div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-49805.htm">如何在MySQL中添加两个或多个字符串？</a></p>
+                                        <p>下一个：<a href="/news/article-50323.htm">狐狸犬价钱（狐狸犬价值）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-42340.htm" title="@RequestBody接受参数报415错误">@RequestBody接受参数报415错误</a></li>
+                        <li class="py-2"><a href="/news/article-32614.htm" title="宠物领养协议书范本大全图片（宠物领养协议书范本大全图片高清）">宠物领养协议书范本大全图片（宠物领养协议书范本大全图片高清）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-27-free-high-speed-nodes.htm" title="12月27日→18.1M/S|2025年最新免费节点Clash XW订阅链接地址">12月27日→18.1M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-45317.htm" title="大型颗粒饲料机图片及价格（大型饲料颗粒机图片和价格）">大型颗粒饲料机图片及价格（大型饲料颗粒机图片和价格）</a></li>
+                        <li class="py-2"><a href="/news/article-34031.htm" title="领养宠物狗是什么意思啊英文（领养狗狗是什么意思?）">领养宠物狗是什么意思啊英文（领养狗狗是什么意思?）</a></li>
+                        <li class="py-2"><a href="/news/article-39861.htm" title="开个小型宠物食品加工厂怎么样（开宠物食品厂需要什么手续）">开个小型宠物食品加工厂怎么样（开宠物食品厂需要什么手续）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-11-free-node-subscribe.htm" title="1月11日→20.2M/S|2025年最新免费节点Clash/SSR/V2ray/Shadowrocket订阅链接地址">1月11日→20.2M/S|2025年最新免费节点Clash/SSR/V2ray/Shadowrocket订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-51384.htm" title="动物防疫站是全额编制吗（动物防疫站属于哪个单位）">动物防疫站是全额编制吗（动物防疫站属于哪个单位）</a></li>
+                        <li class="py-2"><a href="/news/article-38878.htm" title="字符串逆序(递归实现)">字符串逆序(递归实现)</a></li>
+                        <li class="py-2"><a href="/news/article-48762.htm" title="进货猫粮批发价在哪批发（猫粮批发渠道）">进货猫粮批发价在哪批发（猫粮批发渠道）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
