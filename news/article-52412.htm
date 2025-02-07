@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-52412.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Java两个List＜T＞ 求交集,差集,并集,去重后的并集_java</title>
+        <meta name="description" content="目录  操作的List&lt;T&gt;声明 求交集 retainAll() 求差集 removeAll() 求并集 addAll() 求去重后的并集     操作的List&lt;T&gt;声明 o" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash XW免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxw.github.io/news/article-52412.htm" />
+    <meta property="og:site_name" content="Clash XW免费机场节点分享官网" />
+    <meta property="og:title" content="Java两个List＜T＞ 求交集,差集,并集,去重后的并集_java" />
+    <meta property="og:image" content="https://clashxw.github.io/uploads/20241223/a01bde3a26c462073260e699a16947f1.webp" />
+        <meta property="og:release_date" content="2025-02-07T07:18:18" />
+    <meta property="og:updated_time" content="2025-02-07T07:18:18" />
+        <meta property="og:description" content="目录  操作的List&lt;T&gt;声明 求交集 retainAll() 求差集 removeAll() 求并集 addAll() 求去重后的并集     操作的List&lt;T&gt;声明 o" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java两个List＜T＞ 求交集,差集,并集,去重后的并集_java">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>Java两个List＜T＞ 求交集,差集,并集,去重后的并集_java</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">操作的List&lt;T&gt;声明</a></li> <li><a href="#_label1" rel="nofollow">求交集 retainAll()</a></li> <li><a href="#_label2" rel="nofollow">求差集 removeAll()</a></li> <li><a href="#_label3" rel="nofollow">求并集 addAll()</a></li> <li><a href="#_label4" rel="nofollow">求去重后的并集 </a></li> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>操作的List&lt;T&gt;声明</h2> <p>oldList</p> <div class="ay1code"> <pre class="brush:java;">List&lt;String&gt; oldList = new ArrayList&lt;&gt;();  oldList.add("a");  oldList.add("b");  oldList.add("c");  System.out.println("oldList ## " + oldList);  </pre> </div> <p>newList</p> <div class="ay1code"> <pre class="brush:java;">List&lt;String&gt; newList = new ArrayList&lt;&gt;();  newList.add("a");  newList.add("1");  newList.add("2");  System.out.println("newList ## " + newList);  </pre> </div> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>求交集 retainAll()</h2> <p>1. oldList 与 newList 的交集</p> <div class="ay1code"> <pre class="brush:java;">oldList.retainAll(newList);  System.out.println("求交集 ## " + oldList);  </pre> </div> <p>响应</p> <blockquote> <p>oldList ## [a, b, c]<br />newList ## [a, 1, 2]<br />求交集 ## [a]</p> </blockquote> <p>2. newList 与 oldList 的交集</p> <div class="ay1code"> <pre class="brush:java;">newList.retainAll(oldList);  System.out.println("求交集 ## " + newList);  </pre> </div> <p>响应</p> <blockquote> <p>oldList ## [a, b, c]<br />newList ## [a, 1, 2]<br />求交集 ## [a]</p> </blockquote> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>求差集 removeAll()</h2> <p>1. oldList 与 newList 的差集</p> <div class="ay1code"> <pre class="brush:java;">oldList.removeAll(newList);  System.out.println("oldList.removeAll(newList);  --&gt; 求差集（ 在 oldList 集合中，删掉 oldList 与 newList 中都有的元素）： ## " + oldList);  </pre> </div> <p>响应</p> <blockquote> <p>oldList ## [a, b, c]<br />newList ## [a, 1, 2]<br />oldList.removeAll(newList);  --&gt; 求差集（ 在 oldList 集合中，删掉 oldList 与 newList 中都有的元素）： ## [b, c]</p> </blockquote> <p>2. newList与 oldList 的差集</p> <div class="ay1code"> <pre class="brush:java;">newList.removeAll(oldList);  System.out.println("newList.removeAll(oldList);  --&gt; 求差集（ 在 newList 集合中，删掉 oldList 与 newList 中都有的元素）： ## " + newList);  </pre> </div> <p>响应</p> <blockquote> <p>oldList ## [a, b, c]<br />newList ## [a, 1, 2]<br />newList.removeAll(oldList);  --&gt; 求差集（ 在 newList 集合中，删掉 oldList 与 newList 中都有的元素）： ## [1, 2]</p> </blockquote> <p>3. 源码解析</p> <p>removeAll() 的源码</p> <div class="ay1code"> <pre class="brush:java;">    public boolean removeAll(Collection&lt;?&gt; c) {          Objects.requireNonNull(c);          return batchRemove(c, false);      }   </pre> </div> <p>batchRemove的源码</p> <p>(如果传的第二个参数是false，保留差集;如果传的是true，保留的是交集)</p> <div class="ay1code"> <pre class="brush:java;">    private boolean batchRemove(Collection&lt;?&gt; c, boolean complement) {          final Object[] elementData = this.elementData;          int r = 0, w = 0;          boolean modified = false;          try {              for (; r &lt; size; r++)                  if (c.contains(elementData[r]) == complement)                      elementData[w++] = elementData[r];          } finally {              // Preserve behavioral compatibility with AbstractCollection,              // even if c.contains() throws.              if (r != size) {                  System.arraycopy(elementData, r,                                   elementData, w,                                   size - r);                  w += size - r;              }              if (w != size) {                  // clear to let GC do its work                  for (int i = w; i &lt; size; i++)                      elementData[i] = null;                  modCount += size - w;                  size = w;                  modified = true;              }          }          return modified;      }  </pre> </div> <p class="maodian"><a name="_label3" rel="nofollow"></a></p> <h2>求并集 addAll()</h2> <p>1. oldList 与 newList 的并集</p> <div class="ay1code"> <pre class="brush:java;">oldList.addAll(newList);  System.out.println("求并集 ##" + oldList);  </pre> </div> <p>响应</p> <blockquote> <p>oldList ## [a, b, c]<br />newList ## [a, 1, 2]<br />求并集 ##[a, b, c, a, 1, 2]</p> </blockquote> <p>2. newList 与 oldList 的并集</p> <div class="ay1code"> <pre class="brush:java;">newList.addAll(oldList);  System.out.println("求并集 ##" + newList);  </pre> </div> <p>响应</p> <blockquote> <p>oldList ## [a, b, c]<br />newList ## [a, 1, 2]<br />求并集 ##[a, 1, 2, a, b, c]</p> </blockquote> <p class="maodian"><a name="_label4" rel="nofollow"></a></p> <h2>求去重后的并集 </h2> <p>1. oldList 与 newList 去重后的并集</p> <div class="ay1code"> <pre class="brush:java;">oldList.removeAll(newList); // 先求差集得到去除相同项后的 oldList  oldList.addAll(newList); // 再求并集  System.out.println("求并集 ## " + oldList);  </pre> </div> <p>响应</p> <blockquote> <p>oldList ## [a, b, c]<br />newList ## [a, 1, 2]<br />求并集 ## [b, c, a, 1, 2]</p> </blockquote> <p>2. newList与 oldList 去重后的并集</p> <div class="ay1code"> <pre class="brush:java;">newList.removeAll(oldList);  newList.addAll(oldList);  System.out.println("求并集 ## " + newList);  </pre> </div> <p>响应</p> <blockquote> <p>oldList ## [a, b, c]<br />newList ## [a, 1, 2]<br />求并集 ## [1, 2, a, b, c]</p> </blockquote> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-51897.htm">南京宠物救助中心电话 南京宠物救助中心电话24小时</a></p>
+                                        <p>下一个：<a href="/news/article-52413.htm">动物疫苗可以自己打吗现在（动物疫苗可以自己打吗现在疫情）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-51896.htm" title="宠物猫疫苗是什么疫苗类型（宠物猫疫苗是什么疫苗类型的）">宠物猫疫苗是什么疫苗类型（宠物猫疫苗是什么疫苗类型的）</a></li>
+                        <li class="py-2"><a href="/news/article-36915.htm" title="淘宝爱心领养宠物是真的吗（淘宝爱心捐赠是真是假）">淘宝爱心领养宠物是真的吗（淘宝爱心捐赠是真是假）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-free-subscribe-node.htm" title="12月28日→20.9M/S|2025年最新免费节点Clash XW订阅链接地址">12月28日→20.9M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-33085.htm" title="宠物领养协议书范本模板大全图片 宠物领养协议书范本模板大全图片下载">宠物领养协议书范本模板大全图片 宠物领养协议书范本模板大全图片下载</a></li>
+                        <li class="py-2"><a href="/news/article-35259.htm" title="河南宠物疫苗 河南宠物疫苗上市公司">河南宠物疫苗 河南宠物疫苗上市公司</a></li>
+                        <li class="py-2"><a href="/news/article-47285.htm" title="猫轻微抓伤需要打几针狂犬疫苗（猫轻微抓伤怎么办）">猫轻微抓伤需要打几针狂犬疫苗（猫轻微抓伤怎么办）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-25-free-node-subscribe-links.htm" title="12月25日→20.1M/S|2025年最新免费节点Clash XW订阅链接地址">12月25日→20.1M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-38879.htm" title="Springboot @Order注解正确用法">Springboot @Order注解正确用法</a></li>
+                        <li class="py-2"><a href="/news/article-49290.htm" title="中国宠物粮食品牌前十排名（中国十大宠物粮）">中国宠物粮食品牌前十排名（中国十大宠物粮）</a></li>
+                        <li class="py-2"><a href="/news/article-48762.htm" title="进货猫粮批发价在哪批发（猫粮批发渠道）">进货猫粮批发价在哪批发（猫粮批发渠道）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
