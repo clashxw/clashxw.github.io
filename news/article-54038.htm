@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-54038.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>编码练习：JavaScript 点击下拉列表显示相关信息</title>
+        <meta name="description" content="问题描述 点击下拉列表中的选项，加载选项对应的列表信息。 给定HTML： &lt;html&gt;  &lt;head&gt;  &lt;/head&gt;  &lt;body&gt; 	&lt;h1" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash XW免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxw.github.io/news/article-54038.htm" />
+    <meta property="og:site_name" content="Clash XW免费机场节点分享官网" />
+    <meta property="og:title" content="编码练习：JavaScript 点击下拉列表显示相关信息" />
+    <meta property="og:image" content="https://clashxw.github.io/uploads/20241223/b5e0dc2a381ba2dcd27debb26971f53e.webp" />
+        <meta property="og:release_date" content="2025-02-10T07:37:02" />
+    <meta property="og:updated_time" content="2025-02-10T07:37:02" />
+        <meta property="og:description" content="问题描述 点击下拉列表中的选项，加载选项对应的列表信息。 给定HTML： &lt;html&gt;  &lt;head&gt;  &lt;/head&gt;  &lt;body&gt; 	&lt;h1" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="编码练习：JavaScript 点击下拉列表显示相关信息">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>编码练习：JavaScript 点击下拉列表显示相关信息</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h2>问题描述</h2> <p>点击下拉列表中的选项，加载选项对应的列表信息。</p> <p>给定HTML：</p> <pre><code class="language-html">&lt;html&gt;  &lt;head&gt;  &lt;/head&gt;  &lt;body&gt; 	&lt;h1&gt;A few of the Game of Thrones characters&lt;/h1&gt; 	&lt;form&gt;   &lt;label for="house"&gt;House&lt;/label&gt;:   &lt;select name="house" id="house"&gt;       &lt;option value="" selected&gt;Select a house&lt;/option&gt;   &lt;/select&gt; 	&lt;/form&gt;    &lt;ul id="characters"&gt;&lt;/ul&gt;   &lt;/body&gt; &lt;/html&gt;</code></pre> <p>显示结果：</p> <p><img fetchpriority="high" decoding="async" alt="" height="210" src="http://img.555519.xyz/uploads/20230207/4802385e8ad905bb8ea4af942448b176.jpg"></p> <h2>&nbsp;解决方法</h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 我的：</p> <pre><code class="language-javascript">// Write your code here const houseElement = document.createElement("option"); houseElement.textContent = "Lannister"; houseElement.id = "Lannister"; houseElement.value="Lannister"; document.getElementById("house").appendChild(houseElement); document.getElementById("house").addEventListener("change",e=&gt;{     const ui1=document.createElement("li");     ui1.textContent="Tywin";        const ui2=document.createElement("li");     ui2.textContent="Cersei";     const ui3=document.createElement("li");     ui3.textContent="Jaime";     let ui4=document.createElement("li");     ui4.textContent="Tyrion";      if(e.target.value === "Lannister")     {         document.getElementById("characters").appendChild(ui1);         document.getElementById("characters").appendChild(ui2);         document.getElementById("characters").appendChild(ui3);         document.getElementById("characters").appendChild(ui4);     } });</code></pre> <p>显示效果：</p> <p><img decoding="async" alt="" height="205" src="http://img.555519.xyz/uploads/20230207/28f4bc72f420bf2e74c765cd4a0adc6d.jpg"></p> <p>&nbsp;选中这个选项会加载下面的选项</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 参考答案：</p> <pre><code class="language-javascript">/* Game of Thrones characters */  // Character list. Each house has a name and a code const houses = [   {     code: "ST",     name: "Stark"   },   {     code: "LA",     name: "Lannister"   },   {     code: "BA",     name: "Baratheon"   },   {     code: "TA",     name: "Targaryen"   } ];  // Return an array of characters belonging to a house const getCharacters = houseCode =&gt; {   switch (houseCode) {     case "ST":       return ["Eddard", "Catelyn", "Robb", "Sansa", "Arya", "Jon Snow"];     case "LA":       return ["Tywin", "Cersei", "Jaime", "Tyrion"];     case "BA":       return ["Robert", "Stannis", "Renly"];     case "TA":       return ["Aerys", "Daenerys", "Viserys"];     default:       return []; // Empty array   } };  // Create and return an HTML &lt;option&gt; tag const createOptionElement = (text, value) =&gt; {   const element = document.createElement("option");   element.textContent = text;   element.value = value;   return element; };  // Create and return and HTML &lt;li&gt; tag const createLiElement = text =&gt; {   const element = document.createElement("li");   element.textContent = text;   return element; };  const houseElement = document.querySelector("select");  // Fill the house list houses.forEach(house =&gt; {   houseElement.appendChild(createOptionElement(house.name, house.code)); });  // Handle house change event houseElement.addEventListener("change", e =&gt; {   // The value of the event target is the house code   const characters = getCharacters(e.target.value);   const characterElement = document.getElementById("characters");   // Empty the list   characterElement.innerHTML = "";   // Add each character to the list   characters.forEach(character =&gt; {     characterElement.appendChild(createLiElement(character));   }); });</code></pre> <p>效果：</p> <p><img decoding="async" alt="" height="197" src="http://img.555519.xyz/uploads/20230207/9bbc57e06d720987f36ad40eda7407fd.jpg"></p> <p>&nbsp;<img loading="lazy" decoding="async" alt="" height="239" src="http://img.555519.xyz/uploads/20230207/1f165fe0d215d298314014a9af838089.jpg"></p> <p>&nbsp;</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-53494.htm">厦门宠物送养平台电话（厦门宠物赠送）</a></p>
+                                        <p>下一个：<a href="/news/article-54040.htm">宠物医师资格证可以自考吗（可以考宠物医生执照吗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-43346.htm" title="MySQL FROM_UNIXTIME()函数的用途是什么？">MySQL FROM_UNIXTIME()函数的用途是什么？</a></li>
+                        <li class="py-2"><a href="/news/article-49806.htm" title="我们如何在MySQL SELECT查询中将组函数与非组字段一起使用？">我们如何在MySQL SELECT查询中将组函数与非组字段一起使用？</a></li>
+                        <li class="py-2"><a href="/news/article-50323.htm" title="狐狸犬价钱（狐狸犬价值）">狐狸犬价钱（狐狸犬价值）</a></li>
+                        <li class="py-2"><a href="/news/article-48236.htm" title="被流浪猫咬了多长时间接种疫苗（被流浪猫咬了多久打疫苗）">被流浪猫咬了多长时间接种疫苗（被流浪猫咬了多久打疫苗）</a></li>
+                        <li class="py-2"><a href="/news/article-44330.htm" title="深圳市宠物领养中领养猫咪要钱吗（宠物领养 深圳）">深圳市宠物领养中领养猫咪要钱吗（宠物领养 深圳）</a></li>
+                        <li class="py-2"><a href="/news/article-31666.htm" title="网络协议之:Domain name service DNS详解_在线工具">网络协议之:Domain name service DNS详解_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-40356.htm" title="vue-cli@3封装多模块Vuex（vue项目模板封装系列）">vue-cli@3封装多模块Vuex（vue项目模板封装系列）</a></li>
+                        <li class="py-2"><a href="/news/article-52954.htm" title="动物接种视频教程（动物接种视频教程大全）">动物接种视频教程（动物接种视频教程大全）</a></li>
+                        <li class="py-2"><a href="/news/article-37404.htm" title="Spring Boot启动故障分析神器">Spring Boot启动故障分析神器</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-node-share.htm" title="1月13日→21.6M/S|2025年最新免费节点SSR/Clash/V2ray/Shadowrocket订阅链接地址">1月13日→21.6M/S|2025年最新免费节点SSR/Clash/V2ray/Shadowrocket订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">32</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

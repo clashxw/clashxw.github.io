@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-53493.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Vite2+Vue3+ts的eslint设置踩坑</title>
+        <meta name="description" content="目录  新项目了 Vite搭建 eslint  先安装eslint 创建.eslintrc.js 引入规则  Airbnb   配合prettier 对ts的支持 .eslintrc.js   在页面" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash XW免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxw.github.io/news/article-53493.htm" />
+    <meta property="og:site_name" content="Clash XW免费机场节点分享官网" />
+    <meta property="og:title" content="Vite2+Vue3+ts的eslint设置踩坑" />
+    <meta property="og:image" content="https://clashxw.github.io/uploads/20241223/17210eac006a123c1fac3904232cdc97.webp" />
+        <meta property="og:release_date" content="2025-02-09T10:03:37" />
+    <meta property="og:updated_time" content="2025-02-09T10:03:37" />
+        <meta property="og:description" content="目录  新项目了 Vite搭建 eslint  先安装eslint 创建.eslintrc.js 引入规则  Airbnb   配合prettier 对ts的支持 .eslintrc.js   在页面" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Vite2+Vue3+ts的eslint设置踩坑">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>Vite2+Vue3+ts的eslint设置踩坑</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div class="toc"> <div class="toc-container-header">目录</div> <ul> <li><a href="#%E6%96%B0%E9%A1%B9%E7%9B%AE%E4%BA%86" rel="nofollow">新项目了</a></li> <li><a href="#vite%E6%90%AD%E5%BB%BA" rel="nofollow">Vite搭建</a></li> <li><a href="#eslint" rel="nofollow">eslint</a> <ul> <li><a href="#%E5%85%88%E5%AE%89%E8%A3%85eslint" rel="nofollow">先安装eslint</a></li> <li><a href="#%E5%88%9B%E5%BB%BAeslintrcjs" rel="nofollow">创建.eslintrc.js</a></li> <li><a href="#%E5%BC%95%E5%85%A5%E8%A7%84%E5%88%99" rel="nofollow">引入规则</a> <ul> <li><a href="#airbnb" rel="nofollow">Airbnb</a></li> </ul> </li> <li><a href="#%E9%85%8D%E5%90%88prettier" rel="nofollow">配合prettier</a></li> <li><a href="#%E5%AF%B9ts%E7%9A%84%E6%94%AF%E6%8C%81" rel="nofollow">对ts的支持</a></li> <li><a href="#eslintrcjs" rel="nofollow">.eslintrc.js</a></li> </ul> </li> <li><a href="#%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%9F%A5%E7%9C%8Beslint%E6%8A%A5%E9%94%99" rel="nofollow">在页面上查看eslint报错</a></li> <li><a href="#%E4%BD%BF%E7%94%A8setup-sugar%E7%9A%84%E5%9D%91" rel="nofollow">使用setup sugar的坑</a></li> </ul> </div> <h3 id="新项目了">新项目了</h3> <p>浑浑噩噩一个五年前的vue2的项目维护了一年多，要开始重构了。前端还是vue2，要加个后台系统来管理配置化功能。后台管理就捡起vue3吧，好久没写了，看看有啥新东西玩，有空了再更新一下博客。</p> <h3 id="vite搭建">Vite搭建</h3> <p>之前写了个用vue-cli来搭建的（<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/rion1234567/p/14119120.html"  target="_blank" rel="nofollow">vue-cli脚手架搭建vue3.0+typescripe项目</a>），还是Vue3刚出来那会踩的坑，现在vite逐渐成熟，性能、速度也比webpack要好，也来踩踩的。<br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cn.vitejs.dev/guide/"  target="_blank" rel="nofollow">Vite</a>官网已经写的很详细了，不赘述，无坑。<br /><code>yarn create vite vue-app --template vue-ts</code></p> <h3 id="eslint">eslint</h3> <h4 id="先安装eslint">先安装eslint</h4> <p><code>yarn add -D eslint</code></p> <h4 id="创建eslintrcjs">创建.eslintrc.js</h4> <p>先来点基本配置</p> <pre><code>  module.exports = {     root: true,     env: {   	node: true,   	browser: true,   	es2021: true,     },     parserOptions: {   	ecmaVersion: 12,     },   }</code></pre> <h4 id="引入规则">引入规则</h4> <p>我这里就用几个官方规范吧，下面总是要自己配置一堆的，也可以用其他的优秀开源规范（<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/airbnb/javascript"  target="_blank" rel="nofollow">Airbnb</a>）<br /><code>yarn add -D eslint-plugin-vue</code><br /> .eslintrc中extends添加<code>'plugin:vue/vue3-recommended'</code></p> <h5 id="airbnb">Airbnb</h5> <p>如果要用Airbnb，需要安装<code>eslint-config-airbnb-base</code>和<code>eslint-plugin-import</code></p> <pre><code>yarn add -D eslint-config-airbnb-base eslint-plugin-import</code></pre> <p>.eslintrc中extends添加<code>'airbnb-base'</code></p> <h4 id="配合prettier">配合prettier</h4> <pre><code>yarn add -D eslint-plugin-prettier eslint-config-prettier yarn add -D -E prettier</code></pre> <p>.eslintrc差不多就写成这样</p> <pre><code>  ……   extends: [   	'plugin:vue/vue3-recommended',   	'eslint:recommended',   	'plugin:prettier/recommended'   ],   plugins: [ 'prettier'],   rules: {   	'prettier/prettier': 0,   }   ……</code></pre> <h4 id="对ts的支持">对ts的支持</h4> <pre><code>yarn add -D @typescript-eslint/eslint-plugin @typescript-eslint/parser</code></pre> <p>.eslintrc中添加配置</p> <pre><code>plugins: ['@typescript-eslint'], parserOptions: {   parser: '@typescript-eslint/parser' }</code></pre> <h4 id="eslintrcjs">.eslintrc.js</h4> <p>至此，eslint配置完成，可以正常使用，上代码</p> <pre><code>  module.exports = {     root: true,     env: {   	node: true,   	es2021: true,   	browser: true     },     extends: [   	'plugin:vue/vue3-recommended',   	'eslint:recommended',   	'plugin:prettier/recommended'     ],     plugins: ['@typescript-eslint', 'prettier'],     parserOptions: {   	parser: '@typescript-eslint/parser',   	ecmaVersion: 12     },     rules: {   	'prettier/prettier': 0,   	……     }   }</code></pre> <h3 id="在页面上查看eslint报错">在页面上查看eslint报错</h3> <p>强逼迫福音，经常有时候没注意看命令行，报错就一直留下来，提交代码也会被拦住。添加<code>vite-plugin-eslint</code>插件即可<br /> 在vite.config.ts中配置</p> <pre><code>  import { defineConfig } from 'vite'   import vue from '@vitejs/plugin-vue'   import eslintPlugin from 'vite-plugin-eslint'    export default defineConfig({     plugins: [   	vue(),   	eslintPlugin({   	  exclude: ['./node_modules/**'],   	  cache: false   	})     ]   })</code></pre> <p>记笔记！<code>cache</code>这个属性一定要带上<code>false</code>，否则修复的问题还是会不停报出来错，有毒。</p> <h3 id="使用setup-sugar的坑">使用setup sugar的坑</h3> <p><code>&lt;script setup&gt;</code>支持不return直接用，使用eslint旧版会报错<br /><code>'xxx' is assigned a value but never used.</code><br /> 在.eslintrc配置<code>'no-unused-vars': [0]</code>可解决<br /> 我试了新版本没有这个问题，在template里面使用变量就不会标红报错</p> <p>使用<code>defineProps</code>时eslint会报错，说未定义<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/afa5882f338f63e4e01be1a5cb059f55.jpg" alt="Vite2+Vue3+ts的eslint设置踩坑"><br /> 这个时候如果你在vue中引入<code>defineProps</code><br /><code>import {  defineProps } from 'vue'</code><br /> 那么你会得到另一个报错</p> <pre><code>[@vue/compiler-sfc] `defineProps` is a compiler macro and no longer needs to be imported.</code></pre> <p>解决方法：<br /> 在.eslintrc中，添加配置</p> <pre><code>env: {   // ...   'vue/setup-compiler-macros': true }</code></pre> <p>cool~</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-52954.htm">动物接种视频教程（动物接种视频教程大全）</a></p>
+                                        <p>下一个：<a href="/news/article-53494.htm">厦门宠物送养平台电话（厦门宠物赠送）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-24-node-share-links.htm" title="12月24日→21.9M/S|2025年最新免费节点Clash XW订阅链接地址">12月24日→21.9M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-18-node-share.htm" title="1月18日→21.1M/S|2025年最新免费节点SSR/V2ray/Clash/Shadowrocket订阅链接地址">1月18日→21.1M/S|2025年最新免费节点SSR/V2ray/Clash/Shadowrocket订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-40355.htm" title="@Requestbody踩坑">@Requestbody踩坑</a></li>
+                        <li class="py-2"><a href="/news/article-36320.htm" title="南京宠物送养（南京宠物领养吧）">南京宠物送养（南京宠物领养吧）</a></li>
+                        <li class="py-2"><a href="/news/article-39373.htm" title="南京农大动物医院有限责任公司（南京农业大学动物医学院地址）">南京农大动物医院有限责任公司（南京农业大学动物医学院地址）</a></li>
+                        <li class="py-2"><a href="/news/article-32613.htm" title="按照 Promise/A+ 规范逐行注释并实现 Promise_在线工具">按照 Promise/A+ 规范逐行注释并实现 Promise_在线工具</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-22-node-share.htm" title="1月22日→21.8M/S|2025年最新免费节点Shadowrocket/SSR/Clash/V2ray订阅链接地址">1月22日→21.8M/S|2025年最新免费节点Shadowrocket/SSR/Clash/V2ray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-25-free-node-subscribe.htm" title="1月25日→23M/S|2025年最新免费节点Shadowrocket/V2ray/Clash/SSR订阅链接地址">1月25日→23M/S|2025年最新免费节点Shadowrocket/V2ray/Clash/SSR订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-48762.htm" title="进货猫粮批发价在哪批发（猫粮批发渠道）">进货猫粮批发价在哪批发（猫粮批发渠道）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-20-node-share.htm" title="1月20日→20.8M/S|2025年最新免费节点Clash/SSR/Shadowrocket/V2ray订阅链接地址">1月20日→20.8M/S|2025年最新免费节点Clash/SSR/Shadowrocket/V2ray订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">32</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
