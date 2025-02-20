@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-59653.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>v-model.trim用法及其他修饰符</title>
+        <meta name="description" content="v-model的修饰符 v-model.lazy 只有在input输入框发生一个blur时才触发 v-model.trim 将用户输入的前后的空格去掉 v-model.number 将用户输入的字符串" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash XW免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxw.github.io/news/article-59653.htm" />
+    <meta property="og:site_name" content="Clash XW免费机场节点分享官网" />
+    <meta property="og:title" content="v-model.trim用法及其他修饰符" />
+    <meta property="og:image" content="https://clashxw.github.io/uploads/20241223/a7bfdceaefdff041602c4932fa8669be.webp" />
+        <meta property="og:release_date" content="2025-02-20T09:55:12" />
+    <meta property="og:updated_time" content="2025-02-20T09:55:12" />
+        <meta property="og:description" content="v-model的修饰符 v-model.lazy 只有在input输入框发生一个blur时才触发 v-model.trim 将用户输入的前后的空格去掉 v-model.number 将用户输入的字符串" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="v-model.trim用法及其他修饰符">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>v-model.trim用法及其他修饰符</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p><strong>v-model的修饰符<br /> v-model.lazy 只有在input输入框发生一个blur时才触发<br /> v-model.trim 将用户输入的前后的空格去掉<br /> v-model.number 将用户输入的字符串转换成number<br /> 在input textarea select中使用</strong></p> <p>在事件处理程序中调用&nbsp;event.preventDefault()&nbsp;或&nbsp;event.stopPropagation()&nbsp;是非常常见的需求。尽管我们可以在 methods 中轻松实现这点，但更好的方式是：methods 只有纯粹的数据逻辑，而不是去处理 DOM 事件细节。</p> <p>为了解决这个问题， Vue.js 为&nbsp;v-on&nbsp;提供了&nbsp;事件修饰符。通过由点(.)表示的指令后缀来调用修饰符。</p> <p>.stop<br /> .prevent<br /> .capture<br /> .self<br /> .once</p> <pre><code class="language-html">&lt;!-- 阻止单击事件冒泡 --&gt; &lt;a v-on:click.stop="doThis"&gt;&lt;/a&gt;  &lt;!-- 提交事件不再重载页面 --&gt; &lt;form v-on:submit.prevent="onSubmit"&gt;&lt;/form&gt;  &lt;!-- 修饰符可以串联 --&gt; &lt;a v-on:click.stop.prevent="doThat"&gt;&lt;/a&gt;  &lt;!-- 只有修饰符 --&gt; &lt;form v-on:submit.prevent&gt;&lt;/form&gt;  &lt;!-- 添加事件侦听器时使用事件捕获模式 --&gt; &lt;div v-on:click.capture="doThis"&gt;...&lt;/div&gt;  &lt;!-- 只当事件在该元素本身（比如不是子元素）触发时触发回调 --&gt; &lt;div v-on:click.self="doThat"&gt;...&lt;/div&gt;</code></pre> <p>使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。因此，用&nbsp;@click.prevent.self&nbsp;会阻止所有的点击，而&nbsp;@click.self.prevent&nbsp;只会阻止元素上的点击。</p> <p>原创：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.cnblogs.com/happyyjjia-422/p/14344161.html"  title="v-model.trim用法及其他修饰符 - 玫瑰红1314 - 博客园" rel="nofollow">v-model.trim用法及其他修饰符 - 玫瑰红1314 - 博客园</a></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-59089.htm">成都宠物领养基地在哪里预约（成都宠物犬领养）</a></p>
+                                        <p>下一个：<a href="/news/article-59655.htm">宠物粮厂上班视频讲解图（宠物粮食工厂）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-11-node-share-links.htm" title="2月11日→21.2M/S|2025年最新免费节点V2ray/SSR/Clash/Shadowrocket订阅链接地址">2月11日→21.2M/S|2025年最新免费节点V2ray/SSR/Clash/Shadowrocket订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-46302.htm" title="狗粮批发市场进货渠道在哪找到（狗粮批发价格一般多少）">狗粮批发市场进货渠道在哪找到（狗粮批发价格一般多少）</a></li>
+                        <li class="py-2"><a href="/news/article-31667.htm" title="中国十大动物疫苗公司排名第一 中国十大动物疫苗公司排名第一名">中国十大动物疫苗公司排名第一 中国十大动物疫苗公司排名第一名</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-19-free-high-speed-nodes.htm" title="1月19日→20.6M/S|2025年最新免费节点SSR/Clash/Shadowrocket/V2ray订阅链接地址">1月19日→20.6M/S|2025年最新免费节点SSR/Clash/Shadowrocket/V2ray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-5-free-high-speed-nodes.htm" title="2月5日→18.4M/S|2025年最新免费节点SSR/Clash/V2ray/Shadowrocket订阅链接地址">2月5日→18.4M/S|2025年最新免费节点SSR/Clash/V2ray/Shadowrocket订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-55136.htm" title="猫咪全套疫苗打下来要多少钱（猫咪打全疫苗大概多少钱）">猫咪全套疫苗打下来要多少钱（猫咪打全疫苗大概多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-34032.htm" title="动物疫苗分几种类型 动物疫苗分几种类型的">动物疫苗分几种类型 动物疫苗分几种类型的</a></li>
+                        <li class="py-2"><a href="/news/article-49805.htm" title="如何在MySQL中添加两个或多个字符串？">如何在MySQL中添加两个或多个字符串？</a></li>
+                        <li class="py-2"><a href="/news/article-51385.htm" title="流浪宠物领养网站推荐大全（流浪站领养宠物要钱吗）">流浪宠物领养网站推荐大全（流浪站领养宠物要钱吗）</a></li>
+                        <li class="py-2"><a href="/news/article-39860.htm" title="Jackson 枚举序列化/反序列化">Jackson 枚举序列化/反序列化</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">59</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
