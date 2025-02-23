@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-60231.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>springboot 定义统一返回结果</title>
+        <meta name="description" content="前后端分离项目中后端开发需要写相应的接口，定义统一的返回格式有利于提高开发效率和沟通的成本。通常返回的格式主要如下两种： 1.&nbsp;&nbsp; &nbsp;只返回相应的状态，格式如下： { &" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash XW免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxw.github.io/news/article-60231.htm" />
+    <meta property="og:site_name" content="Clash XW免费机场节点分享官网" />
+    <meta property="og:title" content="springboot 定义统一返回结果" />
+    <meta property="og:image" content="https://clashxw.github.io/uploads/20241223/3264f4a528102ab51a5766c59ba07e1d.webp" />
+        <meta property="og:release_date" content="2025-02-21T09:18:40" />
+    <meta property="og:updated_time" content="2025-02-21T09:18:40" />
+        <meta property="og:description" content="前后端分离项目中后端开发需要写相应的接口，定义统一的返回格式有利于提高开发效率和沟通的成本。通常返回的格式主要如下两种： 1.&nbsp;&nbsp; &nbsp;只返回相应的状态，格式如下： { &" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="springboot 定义统一返回结果">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>springboot 定义统一返回结果</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>前后端分离项目中后端开发需要写相应的接口，定义统一的返回格式有利于提高开发效率和沟通的成本。通常返回的格式主要如下两种：<br /> 1.&nbsp;&nbsp; &nbsp;只返回相应的状态，格式如下：</p> <pre><code>{ &nbsp; &nbsp; "code": "200", &nbsp; &nbsp; "msg": "SUCCESS" }</code></pre> <p>&nbsp;2.&nbsp;&nbsp; &nbsp;返回相应的状态及数据，格式如下：</p> <pre><code class="language-javascript">{ &nbsp; &nbsp; "code": "200", &nbsp; &nbsp; "msg": "查询成功", &nbsp; &nbsp; "result": { &nbsp; &nbsp; &nbsp; &nbsp; "id": 10, &nbsp; &nbsp; &nbsp; &nbsp; "name": "张三", &nbsp; &nbsp; &nbsp; &nbsp; "emil": "1234456@qq.com", &nbsp; &nbsp; &nbsp; &nbsp; "phone": null, &nbsp; &nbsp; &nbsp; &nbsp; "address": "测试地址" &nbsp; &nbsp; } }</code></pre> <p>&nbsp;状态代码定义如下：<br /> &nbsp; &nbsp;code : 请求处理状态</p> <ul> <li>&nbsp; &nbsp;&nbsp; &nbsp;200: 请求处理成功</li> <li>&nbsp; &nbsp;&nbsp; &nbsp;400: 请求处理失败</li> <li>&nbsp; &nbsp;&nbsp; &nbsp;500: 服务器内部错误</li> <li>&nbsp; &nbsp;&nbsp; &nbsp;401未认证（签名错误）</li> <li>&nbsp; &nbsp;&nbsp; &nbsp;404接口不存在</li> </ul> <p>Springboot中我们可以使用泛型来定义统一的返回结果：<br /> 1. 先定义只返回状态的Result</p> <pre><code class="language-java">package com.example.demo.base;  import com.alibaba.fastjson.JSON;  public class Result {     private String code;     private String msg;      public String getCode() {         return code;     }      public void setCode(String code) {         this.code = code;     }      public String getMsg() {         return msg;     }      public void setMsg(String msg) {         this.msg = msg;     }      @Override     public String toString() {         return JSON.toJSONString(this);     } }</code></pre> <p>定义即有数据又有返回状态的DateResult</p> <pre><code class="language-java">package com.example.demo.base;  import java.io.Serializable;  public class DateResult&lt;T&gt; extends Result implements Serializable {     private T result;      public T getResult() {         return (T) result;     }      public void setResult(T result) {         this.result = result;     }  }</code></pre> <p>定义响应码枚举</p> <pre><code class="language-java">package com.example.demo.base;  /**  * 响应码枚举  */ public enum ResultCode {     SUCCESS("200"), //成功     FAIL("400"), //失败     UNAUTHORIZED("401"), //未认证（签名错误）     NOT_FOUND("404"), //接口不存在     INTERNAL_SERVER_ERROR("500");//服务器内部错误      private final String code;      ResultCode(String code) {         this.code = code;     }      public String code() {         return code;     } }</code></pre> <p>&nbsp;在Controller类中使用方法如下：</p> <pre><code class="language-java">package com.example.demo.controller;  import org.springframework.web.bind.annotation.PostMapping; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.RestController;  import com.example.demo.base.DateResult; import com.example.demo.base.Result; import com.example.demo.base.ResultCode; import com.example.demo.entity.User;  @RestController @RequestMapping("/user") public class UserController {     @PostMapping("/update")     public Result updateUser(@RequestParam Integer id) {         Result result = new Result();         //相应的逻辑更新逻辑......... 假如更新成功         result.setCode(ResultCode.SUCCESS.code());         result.setMsg("更新成功");         return result;     }      @RequestMapping("/detail")     public DateResult&lt;User&gt; queryUser(@RequestParam Integer id) {         User user = new User();         user.setId(10);         user.setName("张三");         user.setEmil("1234456@qq.com");         user.setAddress("测试地址");         DateResult&lt;User&gt; dateResult = new DateResult&lt;User&gt;();         dateResult.setCode(ResultCode.SUCCESS.code());         dateResult.setMsg("查询成功");         dateResult.setResult(user);         return dateResult;     } }</code></pre> <p>实体类User代码如下：</p> <pre><code class="language-java">package com.example.demo.entity;  import java.io.Serializable;  import com.alibaba.fastjson.JSON;  public class User implements Serializable {     private Integer id;     private String  name;     private String  emil;     private String  phone;     private String  address;      public Integer getId() {         return id;     }      public void setId(Integer id) {         this.id = id;     }      public String getName() {         return name;     }      public void setName(String name) {         this.name = name;     }      public String getEmil() {         return emil;     }      public void setEmil(String emil) {         this.emil = emil;     }      public String getPhone() {         return phone;     }      public void setPhone(String phone) {         this.phone = phone;     }      public String getAddress() {         return address;     }      public void setAddress(String address) {         this.address = address;     }      @Override     public String toString() {         return JSON.toJSONString(this);     } }</code></pre> <p>先测试没有数据的返回格式，测试结果如下：</p> <p style="text-align:center;"><img decoding="async" alt="无数据的返回格式" src="http://img.555519.xyz/uploads3/20220820/b2ad81d65c25d1a6854994482fb4ba83.jpg"></p> <p>测试有返回数据的格式，测试结果如下：</p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220820/14ae42d1b0347a2344fca128d10ad03a.jpg"></p> <p>如上的返回结果，我们需要在controller类中每次都需要new一个返回对象比较麻烦，我们可以新建一个ResultUtil</p> <pre><code class="language-java">package com.example.demo.base;  /**  * 响应结果生成工具  */ public class ResultUtil {     private static final String DEFAULT_SUCCESS_MESSAGE = "SUCCESS";      public static Result genSuccessResult() {          Result result = new Result();         result.setCode(ResultCode.SUCCESS.code());         result.setMsg(DEFAULT_SUCCESS_MESSAGE);         return result;     }      public static &lt;T&gt; DateResult&lt;T&gt; genSuccessResult(T data) {         DateResult&lt;T&gt; dateResult = new DateResult&lt;T&gt;();         dateResult.setCode(ResultCode.SUCCESS.code());         dateResult.setMsg(DEFAULT_SUCCESS_MESSAGE);         dateResult.setResult(data);         return dateResult;     }  }</code></pre> <p>&nbsp;controller 类的代码修改如下：</p> <pre><code class="language-java">package com.example.demo.controller;  import org.springframework.web.bind.annotation.PostMapping; import org.springframework.web.bind.annotation.RequestMapping; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.RestController;  import com.example.demo.base.DateResult; import com.example.demo.base.Result; import com.example.demo.base.ResultUtil; import com.example.demo.entity.User;  @RestController @RequestMapping("/user") public class UserController {     @PostMapping("/update")     public Result updateUser(@RequestParam Integer id) {          return ResultUtil.genSuccessResult();     }      @RequestMapping("/detail")     public DateResult&lt;User&gt; queryUser(@RequestParam Integer id) {         User user = new User();         user.setId(10);         user.setName("张三");         user.setEmil("1234456@qq.com");         user.setAddress("测试地址");         return ResultUtil.genSuccessResult(user);     } }</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-59655.htm">宠物粮厂上班视频讲解图（宠物粮食工厂）</a></p>
+                                        <p>下一个：<a href="/news/article-60232.htm">FP-Growth挖掘频繁项，java实现</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-30134.htm" title="宠物领养平台app推荐哪个好用 宠物领养平台app推荐哪个好用点">宠物领养平台app推荐哪个好用 宠物领养平台app推荐哪个好用点</a></li>
+                        <li class="py-2"><a href="/news/article-48235.htm" title="送养一个孩子怎样写协议书呢图片（孩子送养怎样写送养协议）">送养一个孩子怎样写协议书呢图片（孩子送养怎样写送养协议）</a></li>
+                        <li class="py-2"><a href="/news/article-49290.htm" title="中国宠物粮食品牌前十排名（中国十大宠物粮）">中国宠物粮食品牌前十排名（中国十大宠物粮）</a></li>
+                        <li class="py-2"><a href="/news/article-54583.htm" title="宠物粮食生产厂家排名（宠物粮食公司）">宠物粮食生产厂家排名（宠物粮食公司）</a></li>
+                        <li class="py-2"><a href="/news/article-55137.htm" title="2022公务员国考（2022公务员国考面试时间）">2022公务员国考（2022公务员国考面试时间）</a></li>
+                        <li class="py-2"><a href="/news/article-52413.htm" title="动物疫苗可以自己打吗现在（动物疫苗可以自己打吗现在疫情）">动物疫苗可以自己打吗现在（动物疫苗可以自己打吗现在疫情）</a></li>
+                        <li class="py-2"><a href="/news/article-41331.htm" title="宠物医院好评模板50字怎么写 宠物医院好评模板50字怎么写的">宠物医院好评模板50字怎么写 宠物医院好评模板50字怎么写的</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-4-node-share.htm" title="2月4日→23M/S|2025年最新免费节点Clash/Shadowrocket/V2ray/SSR订阅链接地址">2月4日→23M/S|2025年最新免费节点Clash/Shadowrocket/V2ray/SSR订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-1-free-high-speed-nodes.htm" title="2月1日→20.2M/S|2025年最新免费节点Shadowrocket/SSR/V2ray/Clash订阅链接地址">2月1日→20.2M/S|2025年最新免费节点Shadowrocket/SSR/V2ray/Clash订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-31154.htm" title="synchronized有几种用法？">synchronized有几种用法？</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">68</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
