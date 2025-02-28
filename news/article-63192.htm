@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-63192.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Java中  判断String 是否为空的几种方法（null 、== 、equals）</title>
+        <meta name="description" content="一、基本知识  String str1 = null; str1引用为空，它没有地址，它是一个没有被实例化的对象 String str2 = ""; str2引用为空字符串，它有地址，它是被实例化的对" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash XW免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxw.github.io/news/article-63192.htm" />
+    <meta property="og:site_name" content="Clash XW免费机场节点分享官网" />
+    <meta property="og:title" content="Java中  判断String 是否为空的几种方法（null 、== 、equals）" />
+    <meta property="og:image" content="https://clashxw.github.io/uploads/20241223/422bb01f39d6aa0adfef7879ffaded3a.webp" />
+        <meta property="og:release_date" content="2025-02-26T08:33:24" />
+    <meta property="og:updated_time" content="2025-02-26T08:33:24" />
+        <meta property="og:description" content="一、基本知识  String str1 = null; str1引用为空，它没有地址，它是一个没有被实例化的对象 String str2 = ""; str2引用为空字符串，它有地址，它是被实例化的对" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java中  判断String 是否为空的几种方法（null 、== 、equals）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>Java中  判断String 是否为空的几种方法（null 、== 、equals）</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h2>一、基本知识</h2> <pre class="has"><code class="language-java"> String str1 = null;</code></pre> <p>str1引用为空，它没有地址，它是一个没有被实例化的对象</p> <pre class="has"><code class="language-java">String str2 = "";</code></pre> <p>str2引用为空字符串，它有地址，它是被实例化的对象，值为空而已。</p> <h2>二、判断是否为空</h2> <p>1、如果是string对象是null,用 == 来判断，否则会抛出异常</p> <pre class="has"><code>java.lang.NullPointerException</code></pre> <p>2、如果是空字符串，用来equals() 判断，</p> <pre class="has"><code class="language-java">str.equals("")</code></pre> <p>“ == ”操作在对String这种引用数据类型来说，比较的是地址</p> <p>“equals()"判断的是内容</p> <p>3、综合来说，判断字符串是否为空</p> <pre class="has"><code class="language-java"> if (context != null &amp;&amp; !context.trim().equals("")) {<!-- --></code></pre> <p>trim()：返回一个去掉前后空格之后的 字符串（leading and trailing whitespace）</p> <h2>三、判断是否相等</h2> <pre class="has"><code class="language-java">str1.equals(str2)</code></pre> <p>“ == ”操作在对String这种引用数据类型来说，比较的是地址</p> <p>“equals()"判断的是内容</p> <h2></h2> <h2></h2> <p>比较的是内容</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-63191.htm">详解盒子模型和div布局</a></p>
+                                        <p>下一个：<a href="/news/article-63800.htm">国产哪种狗粮质量信得过（国产什么牌子的狗粮好）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-32613.htm" title="按照 Promise/A+ 规范逐行注释并实现 Promise_在线工具">按照 Promise/A+ 规范逐行注释并实现 Promise_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-36428.htm" title="动物医院有哪些动物 动物医院有哪些动物名字">动物医院有哪些动物 动物医院有哪些动物名字</a></li>
+                        <li class="py-2"><a href="/news/article-57373.htm" title="宠物粮市场销售渠道有哪些呢（宠物粮进货渠道）">宠物粮市场销售渠道有哪些呢（宠物粮进货渠道）</a></li>
+                        <li class="py-2"><a href="/news/article-46302.htm" title="狗粮批发市场进货渠道在哪找到（狗粮批发价格一般多少）">狗粮批发市场进货渠道在哪找到（狗粮批发价格一般多少）</a></li>
+                        <li class="py-2"><a href="/news/article-45826.htm" title="动物疫苗多长时间内打有效呢视频（动物疫苗的使用方法及注意事项）">动物疫苗多长时间内打有效呢视频（动物疫苗的使用方法及注意事项）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-4-node-share.htm" title="1月4日→19.1M/S|2025年最新免费节点Clash XW订阅链接地址">1月4日→19.1M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-59089.htm" title="成都宠物领养基地在哪里预约（成都宠物犬领养）">成都宠物领养基地在哪里预约（成都宠物犬领养）</a></li>
+                        <li class="py-2"><a href="/news/article-53493.htm" title="Vite2+Vue3+ts的eslint设置踩坑">Vite2+Vue3+ts的eslint设置踩坑</a></li>
+                        <li class="py-2"><a href="/news/article-45316.htm" title="广州宠物领养中心有哪些地址和电话（广州宠物猫领养中心）">广州宠物领养中心有哪些地址和电话（广州宠物猫领养中心）</a></li>
+                        <li class="py-2"><a href="/news/article-30232.htm" title="vue axios请求分页器">vue axios请求分页器</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
