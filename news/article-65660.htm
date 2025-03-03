@@ -1,0 +1,210 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-65660.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SpringBoot+Vue之分页操作</title>
+        <meta name="description" content="不建议使用mybatis自带的分页查询，或pagehelper插件等，使用MySql查询语句更方便快捷。  以上一篇表格操作为基础，加入分页操作，完善核心代码。上篇详情CRUD与文件导入导出。 流程 " />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash XW免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxw.github.io/news/article-65660.htm" />
+    <meta property="og:site_name" content="Clash XW免费机场节点分享官网" />
+    <meta property="og:title" content="SpringBoot+Vue之分页操作" />
+    <meta property="og:image" content="https://clashxw.github.io/uploads/20241223/8d357846e9dc061a104e4f4cb3fc688e.webp" />
+        <meta property="og:release_date" content="2025-03-02T09:36:20" />
+    <meta property="og:updated_time" content="2025-03-02T09:36:20" />
+        <meta property="og:description" content="不建议使用mybatis自带的分页查询，或pagehelper插件等，使用MySql查询语句更方便快捷。  以上一篇表格操作为基础，加入分页操作，完善核心代码。上篇详情CRUD与文件导入导出。 流程 " />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SpringBoot+Vue之分页操作">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>SpringBoot+Vue之分页操作</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <blockquote> <p>不建议使用mybatis自带的分页查询，或pagehelper插件等，使用MySql查询语句更方便快捷。</p> </blockquote> <p>以上一篇表格操作为基础，加入分页操作，完善核心代码。上篇详情<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_40141790/article/details/89581744"  rel="nofollow">CRUD与文件导入导出</a>。</p> <h2><a id="_6" rel="nofollow"></a>流程</h2> <h3><a id="_8" rel="nofollow"></a>后端开发</h3> <p>1、定义分页查询统一返回的实体类，返回数据为列表，建议使用泛型。</p> <p>(RespPageEntity.java)</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@Data</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">RespPageEntity</span><span class="token punctuation">{<!-- --></span><span class="token keyword">private</span> List<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">&gt;</span> data<span class="token punctuation">;</span><span class="token keyword">private</span> Long total<span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>2、定义控制层方法，为避免空值，请求参数中给与默认值。</p> <p>（UserController.java）</p> <pre><code class="prism language-java"><span class="token comment">/**  * 根据页码和大小分页查询  * @param page 当前页，默认为1  * @param size 当前每页显示行数，默认为5  * @return 页信息的实体  */</span><span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/page/"</span><span class="token punctuation">)</span><span class="token keyword">public</span> RespPageEntity<span class="token function">getAllUserByPage</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>defaultValue<span class="token operator">=</span><span class="token string">"1"</span><span class="token punctuation">)</span> Integer page<span class="token punctuation">,</span><span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>defaultValue<span class="token operator">=</span><span class="token string">"5"</span><span class="token punctuation">)</span> Integer size<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span> userService<span class="token punctuation">.</span><span class="token function">getAllUserByPage</span><span class="token punctuation">(</span>page<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>3、业务层方法，分为两步，1获取数据总量，2获取查询页信息，因此要加上事务注解@Transactional。</p> <p>(UserService.java)</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@Transactional</span><span class="token keyword">public</span> RespPageEntity<span class="token function">getAllUserByPage</span><span class="token punctuation">(</span>Integer page<span class="token punctuation">,</span> Integer size<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>     RespPageEntity pageEntity<span class="token operator">=</span><span class="token keyword">new</span><span class="token class-name">RespPageEntity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 默认从0开始</span><span class="token keyword">if</span><span class="token punctuation">(</span>page<span class="token operator">!=</span> null<span class="token operator">&amp;&amp;</span> size<span class="token operator">!=</span> null<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         page<span class="token operator">=</span><span class="token punctuation">(</span>page<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span>size<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">// 获取当前也用户信息</span>     List<span class="token generics function"><span class="token punctuation">&lt;</span>User<span class="token punctuation">&gt;</span></span> users<span class="token operator">=</span>  userMapper<span class="token punctuation">.</span><span class="token function">getAllUserByPage</span><span class="token punctuation">(</span>page<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>     pageEntity<span class="token punctuation">.</span><span class="token function">setData</span><span class="token punctuation">(</span>users<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 获取当前用户总量</span>     Long total<span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">getTotal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     pageEntity<span class="token punctuation">.</span><span class="token function">setTotal</span><span class="token punctuation">(</span>total<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span> pageEntity<span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>4、映射文件中的sql语句。</p> <p>(UserMapper.xml)</p> <pre><code class="prism language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span><span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>getAllUserByPage<span class="token punctuation">"</span></span><span class="token attr-name">resultMap</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>BaseResultMap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>   select     *   FROM     userinfo   limit #{page}, #{size}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span><span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>getTotal<span class="token punctuation">"</span></span><span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>java.lang.Long<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>   select count(*) from userinfo;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span></code></pre> <p>5、postman测试，如地址http://127.0.0.1:8081/user/page/返回默认值或http://127.0.0.1:8081/user/page/?page=1&amp;size=5</p> <h3><a id="_82" rel="nofollow"></a>前端完善</h3> <p>1、template临时组件中加入分页的div（User.vue）</p> <pre><code class="prism language-vue">&lt;div style="display: flex;justify-content: center;margin-top: 10px"&gt;   &lt;el-pagination     background     @size-change="sizeChange"     @current-change="currentChange"     :current-page="currentPage"     :page-size="pageSize"     layout="sizes, prev, pager, next, jumper, -&gt;, total, slot"     :total="total"&gt;   &lt;/el-pagination&gt; &lt;/div&gt;</code></pre> <p>2、初始值</p> <pre><code class="prism language-vue">pageSize:5, currentPage:1, total:0,</code></pre> <p>3、每页显示的数量和当前页码</p> <pre><code class="prism language-java"><span class="token function">sizeChange</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">this</span><span class="token punctuation">.</span>pageSize<span class="token operator">=</span>size<span class="token punctuation">;</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">currentChange</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">this</span><span class="token punctuation">.</span>currentPage<span class="token operator">=</span>page<span class="token punctuation">;</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre> <p>4、修改初始化页面方法</p> <pre><code class="prism language-vue">initUser() {   this.getRequest("/user/page/?page="+this.currentPage+"&amp;size="+this.pageSize).then(resp =&gt; {     if (resp) {       this.userinfo=resp.data;       this.total=resp.total;     }   }) }</code></pre> <p>运行后效果图<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220904/380dc404250e618121bde291a667a4e6.jpg" alt="SpringBoot+Vue之分页操作"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-65049.htm">猫喜欢你的10种表现视频（猫咪喜欢我的表现）</a></p>
+                                        <p>下一个：<a href="/news/article-65662.htm">宠物领养中心电话（宠物领养中心电话号码）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-65048.htm" title="宠物领养有哪些平台可靠点（宠物领养软件推荐）">宠物领养有哪些平台可靠点（宠物领养软件推荐）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-5-free-subscribe-node.htm" title="1月5日→19.6M/S|2025年最新免费节点V2ray/SSR/Clash/Shadowrocket订阅链接地址">1月5日→19.6M/S|2025年最新免费节点V2ray/SSR/Clash/Shadowrocket订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-4-node-share.htm" title="1月4日→19.1M/S|2025年最新免费节点Clash XW订阅链接地址">1月4日→19.1M/S|2025年最新免费节点Clash XW订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-26-node-share.htm" title="2月26日→20.9M/S|2025年最新免费节点Shadowrocket/Clash/SSR/V2ray订阅链接地址">2月26日→20.9M/S|2025年最新免费节点Shadowrocket/Clash/SSR/V2ray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-48235.htm" title="送养一个孩子怎样写协议书呢图片（孩子送养怎样写送养协议）">送养一个孩子怎样写协议书呢图片（孩子送养怎样写送养协议）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-3-free-subscribe-node.htm" title="2月3日→18.5M/S|2025年最新免费节点Shadowrocket/SSR/V2ray/Clash订阅链接地址">2月3日→18.5M/S|2025年最新免费节点Shadowrocket/SSR/V2ray/Clash订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-22-free-high-speed-nodes.htm" title="2月22日→20.6M/S|2025年最新免费节点SSR/Clash/Shadowrocket/V2ray订阅链接地址">2月22日→20.6M/S|2025年最新免费节点SSR/Clash/Shadowrocket/V2ray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-47285.htm" title="猫轻微抓伤需要打几针狂犬疫苗（猫轻微抓伤怎么办）">猫轻微抓伤需要打几针狂犬疫苗（猫轻微抓伤怎么办）</a></li>
+                        <li class="py-2"><a href="/news/article-54038.htm" title="编码练习：JavaScript 点击下拉列表显示相关信息">编码练习：JavaScript 点击下拉列表显示相关信息</a></li>
+                        <li class="py-2"><a href="/news/article-36428.htm" title="动物医院有哪些动物 动物医院有哪些动物名字">动物医院有哪些动物 动物医院有哪些动物名字</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
