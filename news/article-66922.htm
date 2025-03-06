@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-66922.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Java带返回值的方法的定义和调用详解_java_</title>
+        <meta name="description" content="目录  带返回值的方法练习 方法的注意事项  方法注意事项 方法通用格式     带返回值的方法练习 需求： 设计一个方法可以获取两个数的较大值，数据来自于参数 思路： 1. 定义一个方法，用于获取两" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash XW免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxw.github.io/news/article-66922.htm" />
+    <meta property="og:site_name" content="Clash XW免费机场节点分享官网" />
+    <meta property="og:title" content="Java带返回值的方法的定义和调用详解_java_" />
+    <meta property="og:image" content="https://clashxw.github.io/uploads/20241223/aba9a0a818e2dffec70815e39da2fc56.webp" />
+        <meta property="og:release_date" content="2025-03-04T10:13:52" />
+    <meta property="og:updated_time" content="2025-03-04T10:13:52" />
+        <meta property="og:description" content="目录  带返回值的方法练习 方法的注意事项  方法注意事项 方法通用格式     带返回值的方法练习 需求： 设计一个方法可以获取两个数的较大值，数据来自于参数 思路： 1. 定义一个方法，用于获取两" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java带返回值的方法的定义和调用详解_java_">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>Java带返回值的方法的定义和调用详解_java_</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">带返回值的方法练习</a></li> <li><a href="#_label1" rel="nofollow">方法的注意事项</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_1_0" rel="nofollow">方法注意事项</a></li> <li><a href="#_lab2_1_1" rel="nofollow">方法通用格式</a></li> </ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>带返回值的方法练习</h2> <p>需求： 设计一个方法可以获取两个数的较大值，数据来自于参数</p> <p>思路：</p> <p>1. 定义一个方法，用于获取两个数中的较大数</p> <div class="ay1code"> <pre class="brush:java;">public  static  int  getMax（int a，int b）{    }</pre> </div> <p>2.使用分支语句分两种情况对两个数的大小进行处理</p> <div class="ay1code"> <pre class="brush:java;">if  （a&gt;b)    {      }else{   }</pre> </div> <p>3. 根据题设分别设置两种情况下对应返回值结果</p> <div class="ay1code"> <pre class="brush:java;">if  （a&gt;b)    {   return a;      }else{   return b;   }</pre> </div> <p>4. 在main() 方法中调用定义好的方法并使用变量保存</p> <div class="ay1code"> <pre class="brush:java;">public static void main (String[ ]  args){            int result  =  getMax(10,20);            system.out.println(getMax(10,20));  }</pre> </div> <p>示例代码：</p> <div class="ay1code"> <pre class="brush:java;"> public class methodtext {      public static void main(String args[]){          int result = getMax(10,20);          System.out.println(result);      }      public static int getMax(int a,int b){          if(a&gt;b){              return a;          }else{              return b;          }      }  }</pre> </div> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>方法的注意事项</h2> <p class="maodian"><a name="_lab2_1_0" rel="nofollow"></a></p> <h3>方法注意事项</h3> <p>* 方法不能嵌套定义</p> <p>* void表示无返回值，可以省略return，也可以单独书写return，后面不加数据</p> <p class="maodian"><a name="_lab2_1_1" rel="nofollow"></a></p> <h3>方法通用格式</h3> <p>格式：</p> <blockquote> <p>public static 返回值类型 方法名（参数）{<!-- --></p> <p>          方法体；</p> <p>          return数据;</p> <p>}</p> </blockquote> <p>*定义方法时，要做到两个明确：</p> <p>    明确返回值类型：主要是明确方法操作完毕之后是否有数据返回，如果没有，写void；如果有，写对应的数据类型</p> <p>     明确参数：主要是明确参数类型和数量</p> <p>调用方法时：</p> <p>  void类型的方法，直接调用即可</p> <p>  非void类型方法，推荐用变量接收调用</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-66286.htm">国内十大宠物粮食品牌排行榜前十名 国内十大宠物粮食品牌排行榜前十名有哪些</a></p>
+                                        <p>下一个：<a href="/news/article-66923.htm">2021年河南动物疫苗中标公告公布时间（河南省2021年动物疫苗中标公告）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-57939.htm" title="宠物粮食市场预测分析图 宠物粮食市场预测分析图表">宠物粮食市场预测分析图 宠物粮食市场预测分析图表</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-6-node-share.htm" title="2月6日→18.2M/S|2025年最新免费节点SSR/Clash/Shadowrocket/V2ray订阅链接地址">2月6日→18.2M/S|2025年最新免费节点SSR/Clash/Shadowrocket/V2ray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-40848.htm" title="Kotlin新手入坑：构造函数，静态方法，顶层方法.._.ST">Kotlin新手入坑：构造函数，静态方法，顶层方法.._.ST</a></li>
+                        <li class="py-2"><a href="/news/article-63800.htm" title="国产哪种狗粮质量信得过（国产什么牌子的狗粮好）">国产哪种狗粮质量信得过（国产什么牌子的狗粮好）</a></li>
+                        <li class="py-2"><a href="/news/article-64429.htm" title="如龙极狗粮在哪里买（如龙极哪里买狗吃的）">如龙极狗粮在哪里买（如龙极哪里买狗吃的）</a></li>
+                        <li class="py-2"><a href="/news/article-67530.htm" title="宠物领养市场数据分析报告模板（中国宠物领养行业报告）">宠物领养市场数据分析报告模板（中国宠物领养行业报告）</a></li>
+                        <li class="py-2"><a href="/news/article-54583.htm" title="宠物粮食生产厂家排名（宠物粮食公司）">宠物粮食生产厂家排名（宠物粮食公司）</a></li>
+                        <li class="py-2"><a href="/news/article-43346.htm" title="MySQL FROM_UNIXTIME()函数的用途是什么？">MySQL FROM_UNIXTIME()函数的用途是什么？</a></li>
+                        <li class="py-2"><a href="/news/article-52953.htm" title="防止重复提交拦截器 spring boot">防止重复提交拦截器 spring boot</a></li>
+                        <li class="py-2"><a href="/news/article-61408.htm" title="宠物粮品牌排行榜前十（宠物粮品牌排行榜前十名）">宠物粮品牌排行榜前十（宠物粮品牌排行榜前十名）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
