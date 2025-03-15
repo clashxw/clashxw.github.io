@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-73415.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>那些年踩过的Java日期时间的坑</title>
+        <meta name="description" content="在 Java 8 之前，我们处理日期时间需求时，使用 Date、Calender 和 SimpleDateFormat，来声明时间戳、使用日历处理日期和格式化解析日期时间。这 些类的 API 的缺点比" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash XW免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxw.github.io/news/article-73415.htm" />
+    <meta property="og:site_name" content="Clash XW免费机场节点分享官网" />
+    <meta property="og:title" content="那些年踩过的Java日期时间的坑" />
+    <meta property="og:image" content="https://clashxw.github.io/uploads/20241223/aba9a0a818e2dffec70815e39da2fc56.webp" />
+        <meta property="og:release_date" content="2025-03-14T07:04:55" />
+    <meta property="og:updated_time" content="2025-03-14T07:04:55" />
+        <meta property="og:description" content="在 Java 8 之前，我们处理日期时间需求时，使用 Date、Calender 和 SimpleDateFormat，来声明时间戳、使用日历处理日期和格式化解析日期时间。这 些类的 API 的缺点比" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="那些年踩过的Java日期时间的坑">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>那些年踩过的Java日期时间的坑</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <p>在 Java 8 之前，我们处理日期时间需求时，使用 Date、Calender 和 SimpleDateFormat，来声明时间戳、使用日历处理日期和格式化解析日期时间。这 些类的 API 的缺点比较明显，比如可读性差、易用性差、使用起来冗余繁琐，还有线程安全问题。</p> <p>下面来看看常见的java8之前日期时间的常见的问题：</p> <h2><a id="Calendar_8" rel="nofollow"></a>Calendar设置问题</h2> <h4><a id="Calendar1224_10" rel="nofollow"></a>Calendar设置时间12小时和24小时问题</h4> <p><strong>例如：</strong></p> <pre><code class="prism language-text">Calendar c = Calendar.getInstance(); c.set(Calendar.HOUR, 10); System.out.println(c.getTime());</code></pre> <pre><code class="prism language-text">Wed Feb 24 22:09:17 CST 2021</code></pre> <p><strong>原因解析：</strong></p> <p>我们设置了10小时，但运行结果是22点，而不是10点。因为Calendar.HOUR默认是按12小时制处理的，需要使用Calendar.HOUR_OF_DAY，因为它才是按24小时处理的。</p> <pre><code class="prism language-text">Calendar c = Calendar.getInstance(); c.set(Calendar.HOUR_OF_DAY, 10); Wed Feb 24 10:09:17 CST 2021</code></pre> <h4><a id="Calendar1_36" rel="nofollow"></a>Calendar获取的月份比实际数字少1</h4> <p>例如：</p> <pre><code>Calendar calendar = Calendar.getInstance(); System.out.println("获取当前月:"+calendar.get(Calendar.MONTH)+" month ");  获取当前月:1 month</code></pre> <p>原因：Calendar中的月份从0开始 到11所以要计算正确的月份结果要加1</p> <pre><code class="prism language-text">Calendar calendar = Calendar.getInstance(); System.out.println("当前"+(calendar.get(Calendar.MONTH)+1)+"月份");</code></pre> <h3><a id="JavaYYYY_DD_hh_54" rel="nofollow"></a>Java日期格式化YYYY 、DD 和hh的坑</h3> <p>例如</p> <pre><code>Calendar calendar = Calendar.getInstance(); calendar.set(2020, Calendar.DECEMBER, 31,15,35); Date testDate = calendar.getTime();  SimpleDateFormat dtf = new SimpleDateFormat("YYYY-MM-dd"); System.out.println("2020-12-31 转 YYYY-MM-dd 格式后 " + dtf.format(testDate));  SimpleDateFormat dtf1 = new SimpleDateFormat("yyyy-MM-DD"); System.out.println("2020-12-31 转 yyyy-MM-DD 格式后 " + dtf1.format(testDate));  SimpleDateFormat dtf2 = new SimpleDateFormat("yyyy-MM-dd hh:mm"); System.out.println("2020-12-31 转 yyyy-MM-dd hh:mm 格式后 " + dtf2.format(testDate));</code></pre> <pre><code>2020-12-31 转 YYYY-MM-dd 格式后 2021-12-31 2020-12-31 转 yyyy-MM-DD 格式后 2020-12-366 2020-12-31 转 yyyy-MM-dd hh:mm 格式后 2020-12-31 03:35</code></pre> <p><strong>解析</strong></p> <p>YYYY问题：2020年12月31号变成了2021年12月31号，是因为YYYY是基于周来计算年的，它指向当天所在周属于的年份，一周从周日开始算起，周六结束，这里2020年12月31号跨年了，那么这一周就算成下一周了，所以<strong>正确使用方式是用yyyy</strong></p> <p>DD问题：DD和dd表示的不一样，DD表示的是一年中的第几天，而dd表示的是一年中的第几天，所以<strong>正确的使用方式是用dd</strong></p> <p>hh问题：设置时间是15点，运行的结果是3点，因为hh是12小时制的日期格式，当时间为15点，会处理为3点，所以正确的使用方式是用<strong>HH</strong> 它才是12小时制。</p> <pre><code>Calendar calendar = Calendar.getInstance(); calendar.set(2020, Calendar.DECEMBER, 31,15,35); Date testDate = calendar.getTime(); SimpleDateFormat dtf3 = new SimpleDateFormat("yyyy-MM-dd HH:mm"); System.out.println("2020-12-31 转 yyyy-MM-dd HH:mm 格式后 " + dtf3.format(testDate));</code></pre> <p><code>2020-12-31 转 yyyy-MM-dd HH:mm 格式后 2020-12-31 15:35</code></p> <h3><a id="SimpleDateFormat__103" rel="nofollow"></a>SimpleDateFormat 解析时间问题</h3> <h4><a id="_static__SimpleDateFormat__107" rel="nofollow"></a>定义的 static 的 SimpleDateFormat 可能会出现线程安全问题。</h4> <p>例如</p> <pre><code>public class SimpleDateFormatTest {      private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");      public static void main(String[] args) {         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(10, 100, 1, TimeUnit.MINUTES, new LinkedBlockingQueue&lt;&gt;(1000));          while (true) {             threadPoolExecutor.execute(() -&gt; {                 try {                     Date parseDate = sdf.parse("2021-01-01 11:12:13");                     System.out.println(parseDate);                 } catch (Exception e) {                     e.printStackTrace();                 }             });         }     }  }</code></pre> <p>运行程序后大量报错:</p> <pre><code>Fri Jan 25 13:07:00 CST 6104 Fri Jan 01 11:12:13 CST 2021 Fri Jan 01 11:12:13 CST 2021 Fri Jan 01 11:12:13 CST 2021 	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110) 	at java.lang.Double.parseDouble(Double.java:538) 	at java.text.DigitList.getDouble(DigitList.java:169) 	at java.text.DecimalFormat.parse(DecimalFormat.java:2089) 	at java.text.SimpleDateFormat.subParse(SimpleDateFormat.java:2162) 	at java.text.SimpleDateFormat.parse(SimpleDateFormat.java:1514) 	at java.text.DateFormat.parse(DateFormat.java:364) 	at org.geekbang.time.commonmistakes.datetime.newdate.SimpleDateFormatTest.lambda$main$0(SimpleDateFormatTest.java:20) 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) 	at java.lang.Thread.run(Thread.java:748) java.lang.NumberFormatException: multiple points 	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:1890) 	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110) 	at java.lang.Double.parseDouble(Double.java:538) 	at java.text.DigitList.getDouble(DigitList.java:169) 	at java.text.DecimalFormat.parse(DecimalFormat.java:2089) 	at java.text.SimpleDateFormat.subParse(SimpleDateFormat.java:2162) 	at java.text.SimpleDateFormat.parse(SimpleDateFormat.java:1514) 	at java.text.DateFormat.parse(DateFormat.java:364)</code></pre> <p>没有报错的输出结果也不正常.</p> <p><strong>解析：</strong></p> <p>全局变量的SimpleDateFormat，在并发情况下，存在安全性问题。</p> <ul> <li>SimpleDateFormat继承了 DateFormat,DateFormat 维护一个全局的 Calendar变量;</li> <li>sdf.parse(dateStr)和sdf.format(date)，都是由Calendar引用来储存的。SimpleDateFormat 的 parse 方法调用 CalendarBuilder 的 establish 方法，来构建 Calendar; establish 方法内部先清空 Calendar 再构建 Calendar，整个操作没有加锁。</li> <li>如果SimpleDateFormat是static全局共享的，Calendar引用也会被共享。</li> <li>因为Calendar内部并没有线程安全机制，所以全局共享的SimpleDateFormat不是线性安全的。</li> </ul> <p><strong>解决SimpleDateFormat线性不安全问题，有三种方式：</strong></p> <ul> <li>将SimpleDateFormat定义为局部变量</li> <li>在同一个线程复用 SimpleDateFormat， 通过 ThreadLocal 来存放 SimpleDateFormat:</li> <li>方法加同步锁synchronized。</li> </ul> <p>正确方式：</p> <pre><code> private static ThreadLocal&lt;SimpleDateFormat&gt; threadSafeSimpleDateFormat = ThreadLocal.withInitial(() -&gt; new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));  private static void wrongfix() throws InterruptedException {     ExecutorService threadPool = Executors.newFixedThreadPool(100);      for (int i = 0; i &lt; 20; i++) {         threadPool.execute(() -&gt; {             for (int j = 0; j &lt; 10; j++) {                 try {                     System.out.println(threadSafeSimpleDateFormat.get().parse("2020-01-01 11:12:13"));                 } catch (ParseException e) {                     e.printStackTrace();                 }             }         });     }     threadPool.shutdown();     threadPool.awaitTermination(1, TimeUnit.HOURS); }</code></pre> <h4><a id="SimpleDateFormat__208" rel="nofollow"></a>SimpleDateFormat 解析的时间问题</h4> <pre><code class="prism language-text">SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); String time = "2021-01"; System.out.println(sdf.parse(time));</code></pre> <pre><code>java.text.ParseException: Unparseable date: "2021-01" 	at java.text.DateFormat.parse(DateFormat.java:366) 	at org.geekbang.time.commonmistakes.datetime.newdate.SimpleDateFormatTest.formatUnMatch(SimpleDateFormatTest.java:23) 	at org.geekbang.time.commonmistakes.datetime.newdate.SimpleDateFormatTest.main(SimpleDateFormatTest.java:16)</code></pre> <p>**解析：**SimpleDateFormat 可以解析长于/等于它定义的时间精度，但是不能解析小于它定义的时间精度。</p> <h4><a id="SimpleDateFormat__227" rel="nofollow"></a>当需要解析的字符串和格式不匹配的时候，SimpleDateFormat 表现得很宽容</h4> <p>例如：</p> <pre><code>String dateString = "20210201"; SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMM"); System.out.println("result:" + dateFormat.parse(dateString));  result:Tue Sep 01 00:00:00 CST 2037</code></pre> <p>居然输出了 2037 年原因是把 0201 当成了月份进行运算了。</p> <p>解决方法需要匹配时间格式进行解析。</p> <h3><a id="_245" rel="nofollow"></a>日期计算</h3> <p>例如：直接使用时间戳进行时间计算：如：Date().getTime 方法得到的时间戳加 30 天对应的毫秒数</p> <pre><code>Date today = new Date(); Date nextMonth = new Date(today.getTime() + 30 * 1000 * 60 * 60 * 24); System.out.println(nextMonth);</code></pre> <pre><code>结果输出Fri Feb 05 00:27:10 CST 2021</code></pre> <p>分析：这里得到的日期比当前日期还要早，并不是1个月以后的日期。出现这个原因是<strong>因为 int 发生了溢出</strong> ,修改方式需要在乘法运算时候加个L使得运算结果成为Long就避免整数溢出了。</p> <p>更加推荐的使用方式是使用 Calendar方法进行操作，如下</p> <pre><code>Calendar c = Calendar.getInstance(); c.setTime(new Date()); c.add(Calendar.DAY_OF_MONTH, 30); System.out.println(c.getTime());</code></pre> <p>使用 Java 8 的日期时间类型更加简洁方便：</p> <pre><code>LocalDateTime localDateTime = LocalDateTime.now(); System.out.println(localDateTime.plusDays(30));</code></pre> <h3><a id="_279" rel="nofollow"></a>总结：</h3> <ul> <li> <p>Java的<code>java.util.Date</code>和<code>java.util.Calendar</code>类易用性差，不支持时区，而且不是线程安全的；</p> </li> <li> <p>用于格式化日期的类<code>SimpleDateFormat</code>对象来处理日期格式化，是非线程安全，在多线程程序中调用复用同一个<code>DateFormat</code>对象，会有线程安全问题。</p> </li> <li> <p>SimpleDateFormat 很容易因为yyyy dd hh 大小写问题出错。</p> </li> <li> <p>Calendar`中获取的月份需要加一才能表示当前月份，还有就是12小时制和24小时制的转换容易出错。</p> </li> </ul> <p>Java 8 推出了新的日期时间类。 ZoneId、ZoneOffset、LocalDateTime、ZonedDateTime 和 DateTimeFormatter 每一个类功能明确清晰、类之间协作简单、 义清晰不踩坑，API 功能强大无需借助外部工具类即可完成操作，并且线程安全下一遍来看看java8 新的日期类。</p> <h3><a id="_292" rel="nofollow"></a></h3> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-72743.htm">芜湖宠物猫店（芜湖宠物猫店地址）</a></p>
+                                        <p>下一个：<a href="/news/article-73416.htm">1970年农历四月二十七是什么星座呢女生婚姻（1970年农历四月二十七是什么星座呢女生婚姻如何）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-36427.htm" title="如何利用pandas处理大数据">如何利用pandas处理大数据</a></li>
+                        <li class="py-2"><a href="/news/article-44818.htm" title="记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题">记一次jenkins发送邮件报错 一直报错 Could not send email as a part of the post-build publishers问题</a></li>
+                        <li class="py-2"><a href="/news/article-36428.htm" title="动物医院有哪些动物 动物医院有哪些动物名字">动物医院有哪些动物 动物医院有哪些动物名字</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-28-free-node-subscribe-links.htm" title="2月28日→18.3M/S|2025年最新免费节点SSR/Shadowrocket/V2ray/Clash订阅链接地址">2月28日→18.3M/S|2025年最新免费节点SSR/Shadowrocket/V2ray/Clash订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-23-node-share.htm" title="2月23日→22.9M/S|2025年最新免费节点V2ray/Clash/Shadowrocket/SSR订阅链接地址">2月23日→22.9M/S|2025年最新免费节点V2ray/Clash/Shadowrocket/SSR订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-62592.htm" title="宠物医院环评怎么收费的（宠物诊所需要环评审批吗）">宠物医院环评怎么收费的（宠物诊所需要环评审批吗）</a></li>
+                        <li class="py-2"><a href="/news/article-58635.htm" title="golang实现简单工厂、方法工厂、抽象工厂三种设计模式_Golang">golang实现简单工厂、方法工厂、抽象工厂三种设计模式_Golang</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-31-free-subscribe-node.htm" title="1月31日→21.5M/S|2025年最新免费节点Shadowrocket/Clash/SSR/V2ray订阅链接地址">1月31日→21.5M/S|2025年最新免费节点Shadowrocket/Clash/SSR/V2ray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-35815.htm" title="免费领养宠物有套路吗?（免费领养宠物的平台是真的吗）">免费领养宠物有套路吗?（免费领养宠物的平台是真的吗）</a></li>
+                        <li class="py-2"><a href="/news/article-74087.htm" title="宠物爱心救助站动物有狂犬病吗（宠物救助站有补助吗）">宠物爱心救助站动物有狂犬病吗（宠物救助站有补助吗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
