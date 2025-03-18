@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-76107.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Vue导航栏，基于elementUI的导航菜单树</title>
+        <meta name="description" content="先上效果图↓↓↓   目前我们要做的效果就是左边这一块 因为是基于elementUI的，所以需要先下载elementUI的依赖，老手可忽略 npm i element-ui -S  同时还需要用到vu" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash XW免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxw.github.io/news/article-76107.htm" />
+    <meta property="og:site_name" content="Clash XW免费机场节点分享官网" />
+    <meta property="og:title" content="Vue导航栏，基于elementUI的导航菜单树" />
+    <meta property="og:image" content="https://clashxw.github.io/uploads/20241223/a01bde3a26c462073260e699a16947f1.webp" />
+        <meta property="og:release_date" content="2025-03-18T06:11:45" />
+    <meta property="og:updated_time" content="2025-03-18T06:11:45" />
+        <meta property="og:description" content="先上效果图↓↓↓   目前我们要做的效果就是左边这一块 因为是基于elementUI的，所以需要先下载elementUI的依赖，老手可忽略 npm i element-ui -S  同时还需要用到vu" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Vue导航栏，基于elementUI的导航菜单树">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>Vue导航栏，基于elementUI的导航菜单树</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h3> <a id="_0" rel="nofollow"></a>先上效果图↓↓↓</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230223/02957dd9bf5d51d59c70c4670029a272.jpg" alt="Vue导航栏，基于elementUI的导航菜单树"></p> <h4> <a id="_3" rel="nofollow"></a>目前我们要做的效果就是左边这一块</h4> <p>因为是基于elementUI的，所以需要先下载elementUI的依赖，老手可忽略</p> <pre><code class="prism language-javascript">npm i element<span class="token operator">-</span>ui <span class="token operator">-</span><span class="token constant">S</span> </code></pre> <p>同时还需要用到vuex，用于控制头部标签与左边菜单栏的同步操作<br /> 安装vuex依赖</p> <pre><code class="prism language-javascript">npm install vuex <span class="token operator">--</span>save </code></pre> <p>如果你是小白，请先学会vuex的使用</p> <h5> <a id="vuexvuex_17" rel="nofollow"></a>目前的功能没有使用到vuex，后续功能会用到，所以目前vuex可以忽略↑↑↑</h5> <p>为了演示方便，我是把所有导航栏的文件放在一起的，可以不用和我一样<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230223/d58a4b80cfb102b9b2d857db20be9d96.jpg" alt="Vue导航栏，基于elementUI的导航菜单树"></p> <h4> <a id="font_colorredfont_21" rel="nofollow"></a>废话不多说，<font color="red">直接上代码</font><br /> </h4> <h4> <a id="_22" rel="nofollow"></a>下面是子组件代码↓↓↓</h4> <p>TMenu.vue</p> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> TMenu<span class="token punctuation">.</span>vue <span class="token operator">--</span><span class="token operator">&gt;</span> <span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 源码问题，需加上<span class="token operator">:</span>popper<span class="token operator">-</span>append<span class="token operator">-</span>to<span class="token operator">-</span>body<span class="token operator">=</span><span class="token string">"false"</span>，不然会导致重复调用 <span class="token operator">--</span><span class="token operator">&gt;</span>   <span class="token operator">&lt;</span>el<span class="token operator">-</span>submenu v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"menu.children &amp;&amp; menu.children.length &gt;= 1"</span> <span class="token operator">:</span>index<span class="token operator">=</span><span class="token string">"menu.menuId + ''"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"menu.menuId"</span> <span class="token operator">:</span>popper<span class="token operator">-</span>append<span class="token operator">-</span>to<span class="token operator">-</span>body<span class="token operator">=</span><span class="token string">"false"</span><span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>template slot<span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">&gt;</span>       <span class="token operator">&lt;</span>i <span class="token operator">:</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"menu.icon"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>       <span class="token operator">&lt;</span>span slot<span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span>menu<span class="token punctuation">.</span>menuName<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>t<span class="token operator">-</span>menu v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"item in menu.children"</span> <span class="token operator">:</span>menu<span class="token operator">=</span><span class="token string">"item"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"item.menuId"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>t<span class="token operator">-</span>menu<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>submenu<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span>el<span class="token operator">-</span>menu<span class="token operator">-</span>item v<span class="token operator">-</span><span class="token keyword">else</span> <span class="token operator">:</span>index<span class="token operator">=</span><span class="token string">"menu.menuId + ''"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"menu.menuId"</span><span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>i <span class="token operator">:</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"menu.icon"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>span slot<span class="token operator">=</span><span class="token string">"title"</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span>menu<span class="token punctuation">.</span>menuName<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>   <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>menu<span class="token operator">-</span>item<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span> <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{<!-- --></span>   name<span class="token operator">:</span> <span class="token string">'TMenu'</span><span class="token punctuation">,</span> <span class="token comment">//组件名</span>   props<span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>     menu<span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>       type<span class="token operator">:</span> Object<span class="token punctuation">,</span>       required<span class="token operator">:</span> <span class="token boolean">true</span>     <span class="token punctuation">}</span>   <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>style scoped<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span> </code></pre> <h4> <a id="_55" rel="nofollow"></a>下面是使用方式的代码↓↓↓</h4> <p>NavBar.vue</p> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"menu-bar-container"</span><span class="token operator">&gt;</span>         <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 组件使用方法 <span class="token operator">--</span><span class="token operator">&gt;</span>         <span class="token operator">&lt;</span>el<span class="token operator">-</span>menu ref<span class="token operator">=</span><span class="token string">"navmenu"</span> <span class="token operator">:</span><span class="token keyword">default</span><span class="token operator">-</span>active<span class="token operator">=</span><span class="token string">"activeIndex"</span> <span class="token operator">:</span>collapse<span class="token operator">=</span><span class="token string">"isCollapse"</span>          <span class="token operator">:</span><span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"isCollapse?'el-menu-width2':'el-menu-width1'"</span> <span class="token operator">:</span>collapse<span class="token operator">-</span>transition<span class="token operator">=</span><span class="token string">"false"</span><span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>t<span class="token operator">-</span>menu v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"item in menus"</span> <span class="token operator">:</span>menu<span class="token operator">=</span><span class="token string">"item"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"item.menuId"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>t<span class="token operator">-</span>menu<span class="token operator">&gt;</span>         <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>menu<span class="token operator">&gt;</span>     <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>  <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span> <span class="token keyword">import</span> <span class="token punctuation">{<!-- --></span> mapState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span><span class="token punctuation">;</span><span class="token comment">//此处可以不使用</span> <span class="token keyword">import</span>  TMenu  <span class="token keyword">from</span> <span class="token string">'./TMenu'</span> <span class="token keyword">import</span>  <span class="token punctuation">{<!-- --></span>menuTreeData<span class="token punctuation">}</span>  <span class="token keyword">from</span> <span class="token string">'./menu'</span><span class="token punctuation">;</span><span class="token comment">//导入数据，此处我的数据写死了，你可以是后台传过来的数据</span> 	<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{<!-- --></span>         computed<span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>         <span class="token operator">...</span> <span class="token function">mapState</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span>         		<span class="token comment">//用于控制折叠，类型为boolean，false为展开，我这里使用了vuex，你可以写在data中</span>                 <span class="token function-variable function">isCollapse</span><span class="token operator">:</span> <span class="token parameter">state</span><span class="token operator">=&gt;</span>state<span class="token punctuation">.</span>menu<span class="token punctuation">.</span>isCollapse<span class="token punctuation">,</span>                 <span class="token function-variable function">activeIndex</span><span class="token operator">:</span> <span class="token parameter">state</span><span class="token operator">=&gt;</span>state<span class="token punctuation">.</span>menu<span class="token punctuation">.</span>activeIndex             <span class="token punctuation">}</span><span class="token punctuation">)</span>         <span class="token punctuation">}</span><span class="token punctuation">,</span>         components<span class="token operator">:</span><span class="token punctuation">{<!-- --></span>             TMenu         <span class="token punctuation">}</span><span class="token punctuation">,</span> 	    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	      <span class="token keyword">return</span> <span class="token punctuation">{<!-- --></span> 	      	  <span class="token comment">//isCollapse:false,//可以写在这里</span>               menus<span class="token operator">:</span>menuTreeData 	      <span class="token punctuation">}</span><span class="token punctuation">;</span> 	    <span class="token punctuation">}</span> 	  <span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span> <span class="token operator">&lt;</span>style<span class="token operator">&gt;</span>     <span class="token punctuation">.</span>menu<span class="token operator">-</span>bar<span class="token operator">-</span>container <span class="token punctuation">{<!-- --></span>         position<span class="token operator">:</span> fixed<span class="token punctuation">;</span>         top<span class="token operator">:</span> <span class="token number">0</span>px<span class="token punctuation">;</span>         left<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>         bottom<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>         z<span class="token operator">-</span>index<span class="token operator">:</span> <span class="token number">1020</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>     <span class="token punctuation">.</span>el<span class="token operator">-</span>menu<span class="token operator">-</span>width1<span class="token punctuation">{<!-- --></span>         width<span class="token operator">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>     <span class="token punctuation">}</span>     <span class="token punctuation">.</span>el<span class="token operator">-</span>menu<span class="token operator">-</span>width2<span class="token punctuation">{<!-- --></span>         width<span class="token operator">:</span> <span class="token number">65</span>px<span class="token punctuation">;</span>     <span class="token punctuation">}</span> <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span> </code></pre> <h4> <a id="_108" rel="nofollow"></a>下面是数据格式的代码↓↓↓</h4> <p>menu.js</p> <pre><code class="prism language-javascript"><span class="token comment">/**  * 权限管理在后台，前端接收到的是已经过滤完的菜单树  * @menuId 菜单唯一识别  * @menuName 名称  * @icon 图标  * @parentId 父菜单，前端不用，后端用来嵌套树  * @route 只有叶子结点有路由  * @type 是菜单级别，只有一级菜单和二级菜单  * @orderNum 是菜单排序，后台需要用来排序，前端不用  * @children 叶子结点没有该属性或者为空数组  */</span> <span class="token comment">// 获取菜单树</span> <span class="token keyword">export</span>  <span class="token keyword">const</span> menuTreeData <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{<!-- --></span>     <span class="token string">"menuId"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>     <span class="token string">"menuName"</span><span class="token operator">:</span> <span class="token string">"系统管理"</span><span class="token punctuation">,</span>     <span class="token string">"parentId"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>     <span class="token string">"route"</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>     <span class="token string">"type"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>     <span class="token string">"icon"</span><span class="token operator">:</span> <span class="token string">"el-icon-setting"</span><span class="token punctuation">,</span>     <span class="token string">"orderNum"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>     <span class="token string">"children"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{<!-- --></span>             <span class="token string">"menuId"</span><span class="token operator">:</span> <span class="token number">11</span><span class="token punctuation">,</span>             <span class="token string">"menuName"</span><span class="token operator">:</span> <span class="token string">"权限管理"</span><span class="token punctuation">,</span>             <span class="token string">"parentId"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>             <span class="token string">"parentName"</span><span class="token operator">:</span> <span class="token string">"系统管理"</span><span class="token punctuation">,</span>             <span class="token string">"route"</span><span class="token operator">:</span> <span class="token string">"../views/new1"</span><span class="token punctuation">,</span>             <span class="token string">"type"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>             <span class="token string">"icon"</span><span class="token operator">:</span> <span class="token string">"el-icon-warning-outline"</span><span class="token punctuation">,</span>             <span class="token string">"orderNum"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>             <span class="token string">"children"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>         <span class="token punctuation">}</span><span class="token punctuation">,</span>         <span class="token punctuation">{<!-- --></span>             <span class="token string">"menuId"</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>             <span class="token string">"menuName"</span><span class="token operator">:</span> <span class="token string">"菜单管理"</span><span class="token punctuation">,</span>             <span class="token string">"parentId"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>             <span class="token string">"parentName"</span><span class="token operator">:</span> <span class="token string">"系统管理"</span><span class="token punctuation">,</span>             <span class="token string">"route"</span><span class="token operator">:</span> <span class="token string">"../views/new2"</span><span class="token punctuation">,</span>             <span class="token string">"type"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>             <span class="token string">"icon"</span><span class="token operator">:</span> <span class="token string">"el-icon-menu"</span><span class="token punctuation">,</span>             <span class="token string">"orderNum"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>             <span class="token string">"children"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>         <span class="token punctuation">}</span>     <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{<!-- --></span>     <span class="token string">"menuId"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>     <span class="token string">"menuName"</span><span class="token operator">:</span> <span class="token string">"个人管理"</span><span class="token punctuation">,</span>     <span class="token string">"parentId"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>     <span class="token string">"route"</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>     <span class="token string">"type"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>     <span class="token string">"icon"</span><span class="token operator">:</span> <span class="token string">"el-icon-user"</span><span class="token punctuation">,</span>     <span class="token string">"orderNum"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>     <span class="token string">"children"</span><span class="token operator">:</span> <span class="token punctuation">[</span>         <span class="token punctuation">{<!-- --></span>             <span class="token string">"menuId"</span><span class="token operator">:</span> <span class="token number">21</span><span class="token punctuation">,</span>             <span class="token string">"menuName"</span><span class="token operator">:</span> <span class="token string">"密码管理"</span><span class="token punctuation">,</span>             <span class="token string">"parentId"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>             <span class="token string">"parentName"</span><span class="token operator">:</span> <span class="token string">"个人管理"</span><span class="token punctuation">,</span>             <span class="token string">"route"</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>             <span class="token string">"type"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>             <span class="token string">"icon"</span><span class="token operator">:</span> <span class="token string">"el-icon-view"</span><span class="token punctuation">,</span>             <span class="token string">"orderNum"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>             <span class="token string">"children"</span><span class="token operator">:</span> <span class="token punctuation">[</span>                 <span class="token punctuation">{<!-- --></span>                     <span class="token string">"menuId"</span><span class="token operator">:</span> <span class="token number">211</span><span class="token punctuation">,</span>                     <span class="token string">"menuName"</span><span class="token operator">:</span> <span class="token string">"密保管理"</span><span class="token punctuation">,</span>                     <span class="token string">"parentId"</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>                     <span class="token string">"parentName"</span><span class="token operator">:</span> <span class="token string">"密码管理"</span><span class="token punctuation">,</span>                     <span class="token string">"route"</span><span class="token operator">:</span> <span class="token string">"../views/new3"</span><span class="token punctuation">,</span>                     <span class="token string">"type"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>                     <span class="token string">"icon"</span><span class="token operator">:</span> <span class="token string">"el-icon-link"</span><span class="token punctuation">,</span>                     <span class="token string">"orderNum"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>                     <span class="token string">"children"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>                 <span class="token punctuation">}</span><span class="token punctuation">]</span>         <span class="token punctuation">}</span><span class="token punctuation">,</span>         <span class="token punctuation">{<!-- --></span>             <span class="token string">"menuId"</span><span class="token operator">:</span> <span class="token number">22</span><span class="token punctuation">,</span>             <span class="token string">"menuName"</span><span class="token operator">:</span> <span class="token string">"历史记录"</span><span class="token punctuation">,</span>             <span class="token string">"parentId"</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>             <span class="token string">"parentName"</span><span class="token operator">:</span> <span class="token string">"个人管理"</span><span class="token punctuation">,</span>             <span class="token string">"route"</span><span class="token operator">:</span> <span class="token string">"../views/new1"</span><span class="token punctuation">,</span>             <span class="token string">"type"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>             <span class="token string">"icon"</span><span class="token operator">:</span> <span class="token string">"el-icon-zoom-in"</span><span class="token punctuation">,</span>             <span class="token string">"orderNum"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>             <span class="token string">"children"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>         <span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">]</span> </code></pre> <p>好了，功能完成，大致效果为下图，可能样式会有所区别，可以自己进行<strong>调整</strong><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230223/6fd64b5f92c2c1b2aa1f9b885498ed4f.jpg" alt="Vue导航栏，基于elementUI的导航菜单树"></p> <h4> <a id="_202" rel="nofollow"></a>欢迎评论留言，或者加我微信</h4> <h6> <a id="font_colorredfont_203" rel="nofollow"></a>我创建了一个<font color="red">技术交流微信群</font><br /> </h6> <h6> <a id="font_colorredfont_204" rel="nofollow"></a><font color="red">加我微信，拉你进群，备注来意</font><br /> </h6> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-75424.htm">重庆在哪里领养狗狗比较好（重庆在哪里领养狗狗比较好点）</a></p>
+                                        <p>下一个：<a href="/news/article-76109.htm">动物诊所英文翻译（动物诊所英文翻译怎么说）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-58635.htm" title="golang实现简单工厂、方法工厂、抽象工厂三种设计模式_Golang">golang实现简单工厂、方法工厂、抽象工厂三种设计模式_Golang</a></li>
+                        <li class="py-2"><a href="/news/article-39372.htm" title="学宠物美容师怎么样,有前景吗女生可以学吗（学宠物美容师怎么样,有前景吗女生可以学吗视频）">学宠物美容师怎么样,有前景吗女生可以学吗（学宠物美容师怎么样,有前景吗女生可以学吗视频）</a></li>
+                        <li class="py-2"><a href="/news/article-50855.htm" title="宠物粮食代加工骗局曝光 宠物粮食代加工骗局曝光视频">宠物粮食代加工骗局曝光 宠物粮食代加工骗局曝光视频</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-7-free-high-speed-nodes.htm" title="3月7日→19.9M/S|2025年最新免费节点Clash/Shadowrocket/V2ray/SSR订阅链接地址">3月7日→19.9M/S|2025年最新免费节点Clash/Shadowrocket/V2ray/SSR订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-65048.htm" title="宠物领养有哪些平台可靠点（宠物领养软件推荐）">宠物领养有哪些平台可靠点（宠物领养软件推荐）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-15-node-share.htm" title="3月15日→23M/S|2025年最新免费节点Shadowrocket/V2ray/SSR/Clash订阅链接地址">3月15日→23M/S|2025年最新免费节点Shadowrocket/V2ray/SSR/Clash订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-45317.htm" title="大型颗粒饲料机图片及价格（大型饲料颗粒机图片和价格）">大型颗粒饲料机图片及价格（大型饲料颗粒机图片和价格）</a></li>
+                        <li class="py-2"><a href="/news/article-64429.htm" title="如龙极狗粮在哪里买（如龙极哪里买狗吃的）">如龙极狗粮在哪里买（如龙极哪里买狗吃的）</a></li>
+                        <li class="py-2"><a href="/news/article-46801.htm" title="Eureka注册中心高可用及常用配置项">Eureka注册中心高可用及常用配置项</a></li>
+                        <li class="py-2"><a href="/news/article-41837.htm" title="自从养了猫运气就一直不好（养猫最忌讳的一个生肖）">自从养了猫运气就一直不好（养猫最忌讳的一个生肖）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
