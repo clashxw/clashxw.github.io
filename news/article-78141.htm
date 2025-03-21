@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-78141.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>JAVA8-Lambda表达式</title>
+        <meta name="description" content="前言 行为参数化，是将方法作为参数进行传递，可以适应更多的需求变化。 行为参数化中的方法参数，在JDK8之前可以使用匿名累来进行传递，也可以通过一个指定接口实现一个类来进行传递。 总之，行为参数化传递" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash XW免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxw.github.io/news/article-78141.htm" />
+    <meta property="og:site_name" content="Clash XW免费机场节点分享官网" />
+    <meta property="og:title" content="JAVA8-Lambda表达式" />
+    <meta property="og:image" content="https://clashxw.github.io/uploads/20241223/5912a735f167f9263a7f9fba288346ae.webp" />
+        <meta property="og:release_date" content="2025-03-21T10:28:54" />
+    <meta property="og:updated_time" content="2025-03-21T10:28:54" />
+        <meta property="og:description" content="前言 行为参数化，是将方法作为参数进行传递，可以适应更多的需求变化。 行为参数化中的方法参数，在JDK8之前可以使用匿名累来进行传递，也可以通过一个指定接口实现一个类来进行传递。 总之，行为参数化传递" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="JAVA8-Lambda表达式">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>JAVA8-Lambda表达式</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-dracula"> <h3> <a id="_0" rel="nofollow"></a>前言</h3> <p>行为参数化，是将方法作为参数进行传递，可以适应更多的需求变化。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/48978ee4c6638215eb05e2470dd715e9.jpg" alt="JAVA8-Lambda表达式"><br /> 行为参数化中的方法参数，在JDK8之前可以使用匿名累来进行传递，也可以通过一个指定接口实现一个类来进行传递。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/4a454f01db6d6d8a66fac8121c3ae356.jpg" alt="JAVA8-Lambda表达式"><br /> 总之，行为参数化传递代码有助于应对不断变化的需求。</p> <h3> <a id="Lambda_7" rel="nofollow"></a>什么是Lambda表达式</h3> <p>可以把Lambda表达式理解为简洁地表示可传递的匿名函数的一种方式:它没有名称，但它有参数列表、函数主体、返回类型，可能还有一个可以抛出的异常列表。<br /> Lambda表达式可以作为参数传递给方法或者存储在变量中。</p> <p><strong>Lambda表达式分为三部分</strong>、<br /> 1.参数列表。传递给Lambda的主体<br /> 2.箭头。用于把参数列表和Lambda主体隔开。<br /> 3.Lambda主体。表达式就是Lambda的返回值。可以使void、String等等类型。</p> <p>Lambda示例<br /> 布尔表达式<code>List&lt;String&gt; list) -&gt; list.isEmpty()</code><br /> 创建对象<code>() -&gt; new Apple(10)</code><br /> 消费一个对象</p> <pre><code>(Apple a) -&gt; {     System.out.println(a.getWeight()); } </code></pre> <p>从一个对象中选择/抽取<code>(String s) -&gt; s.length()</code><br /> 组合两个值<code>(int a, int b) -&gt; a * b</code><br /> 比较两个对象的值<code>(Apple a1, Apple a2) -&gt; a1.getWeight().compareTo(a2.getWeight())</code></p> <p>Lambda引用的外部变量必须是不可修改的，被final修饰的。</p> <h3> <a id="_32" rel="nofollow"></a>函数式接口</h3> <p>函数式接口就是只定义一个抽象方法的接口。并且它可以有1个或者多个默认方法。</p> <pre><code>public interface Predicate&lt;T&gt;{         boolean test (T t); } </code></pre> <p>函数描述符是什么？也就是函数的抽象方法。例如Runnable接口，它就是() -&gt; void。</p> <p>注解<code>@FunctionalInterface</code><br /> 这个标注用于表示该接口会设计成一个函数式接口。如果不符合要求，编译器会返回错误。</p> <p>任何函数式接口都不允许抛出受检异常。<br /> 如果需要抛出异常：1.可以定义接口时声明抛出受检异常。2.可以把lambda包在try/catch块中。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/d63ecf3de184b484e98fc263782c0eb9.jpg" alt="JAVA8-Lambda表达式"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/0e919c40e8b2dc153367b5c39282dd7f.jpg" alt="JAVA8-Lambda表达式"><br /> 特殊void兼容逻辑：如果Lambda主体是一个语句表达式，那它一个返回void的函数描述符兼容。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/a795f2a313832fb1eb43a8eab40e7a5d.jpg" alt="JAVA8-Lambda表达式"><br /> Lambda表达式不能操作外部局部变量，因为java中局部变量是存在每个线程的栈中。Lambda相当于另一个线程！<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/5bfadd9426f7f0e005a8d1fd541729d4.jpg" alt="JAVA8-Lambda表达式"></p> <h3> <a id="JAVA8_54" rel="nofollow"></a>JAVA8中新的函数式接口</h3> <p>1.<code>java.util.function.Predicate</code><br /> java.util.function.Predicate接口定义了一个名叫test的抽象方法，它接受泛型 T对象，并返回一个boolean。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/76bf4bb30ccbb74a41a061ab1151fccf.jpg" alt="JAVA8-Lambda表达式"><br /> 2.<code>java.util.function.Consumer</code><br /><code>java.util.function.Consumer&lt;T&gt;</code>定义了一个名叫accept的抽象方法，它接受泛型T 的对象，没有返回(void)。你如果需要访问类型T的对象，并对其执行某些操作(打印、处理数据)，就可以使用这个接口。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/e2e632aa767f583b3119a0183d8d0d3f.jpg" alt="JAVA8-Lambda表达式"><br /> 3.<code>java.util.function.Function</code><br /><code>java.util.function.Function&lt;T, R&gt;</code>接口定义了一个叫作apply的方法，它接受一个 泛型T的对象，并返回一个泛型R的对象。如果你需要定义一个Lambda，将输入对象的信息映射到输出，就可以使用这个接口<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/69a1adf08d4dbedd3f029ea942b3d882.jpg" alt="JAVA8-Lambda表达式"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/520bb19de255089d37f30e35f33e3fc8.jpg" alt="JAVA8-Lambda表达式"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/7113c6fc73a3a8fe89a27e381775275e.jpg" alt="JAVA8-Lambda表达式"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/84ae5ffddf632cbe3c397792e00c69c2.jpg" alt="JAVA8-Lambda表达式"></p> <h3> <a id="lambda_68" rel="nofollow"></a>lambda类型检查、推断及限制</h3> <p>类型检查过程：<br /> 检查方法接口定义、检查定义类型、检查入参类型（接收什么返回什么）<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/b945105f09a68c5697a9141a3310542d.jpg" alt="JAVA8-Lambda表达式"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/534e7994bcfe1d79b1bc841cc2e6c7e4.jpg" alt="JAVA8-Lambda表达式"></p> <h3> <a id="Lambda_73" rel="nofollow"></a>简写Lambda</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230210/a2f65f0a79bdcb7a439a14b874aa3b2e.jpg" alt="JAVA8-Lambda表达式"><br /> 可以用在静态方法、实例方法、某个对象的实例方法。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/fea5a64fd43c78057d30c66bb0196f47.jpg" alt="JAVA8-Lambda表达式"><br /><strong>Lambda操作构造函数</strong></p> <pre><code>	    Supplier&lt;Apple&gt; c1 = () -&gt; new Apple();         Apple a1 = c1.get();         //简化         Supplier&lt;Apple&gt; c2 = Apple::new;         Apple a2 = c2.get();          Function&lt;Integer, Apple&gt; f1 = (weight) -&gt; new Apple(weight);         Apple a3 = f1.apply(200);         //简化         Function&lt;Integer, Apple&gt; f2 = Apple::new;         Apple a4 = f2.apply(100); </code></pre> <h3> <a id="Lambda_92" rel="nofollow"></a>复合Lambda表达式</h3> <p>1.Predicate谓词<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/65d6fa5d77ed7f53c62c7db52fb560a4.jpg" alt="JAVA8-Lambda表达式"><br /> 注意优先级是从左到右的~<br /> 2.Function函数<br /> Function接口为此配 了andThen和compose两个默认方法。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/4b6fd731c4991820eca1811aa6afb367.jpg" alt="JAVA8-Lambda表达式"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/cb30571e6457f50eae731428834cefba.jpg" alt="JAVA8-Lambda表达式"><br /> 同样也可以自己实现<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/bf32f671fd4c9d970839ff8313b450ae.jpg" alt="JAVA8-Lambda表达式"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/1fffe9a92f430e3b5743060b7383f835.jpg" alt="JAVA8-Lambda表达式"></p> <p>这种复杂Lambda也能实现<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230210/190fcd4f7924e48899b370e5a2f56238.jpg" alt="JAVA8-Lambda表达式"></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-77461.htm">猫一般多久做一次体内体外驱虫（猫咪多久做一次体内体外驱虫）</a></p>
+                                        <p>下一个：<a href="/news/article-78142.htm">猫三联是三针还是一针打完（猫三联是几针啊）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-51897.htm" title="南京宠物救助中心电话 南京宠物救助中心电话24小时">南京宠物救助中心电话 南京宠物救助中心电话24小时</a></li>
+                        <li class="py-2"><a href="/news/article-48762.htm" title="进货猫粮批发价在哪批发（猫粮批发渠道）">进货猫粮批发价在哪批发（猫粮批发渠道）</a></li>
+                        <li class="py-2"><a href="/news/article-58636.htm" title="免费领养宠物包邮是真的吗还是假的呀（宠物免费领养是什么意思）">免费领养宠物包邮是真的吗还是假的呀（宠物免费领养是什么意思）</a></li>
+                        <li class="py-2"><a href="/news/article-68186.htm" title="动物疫苗价格表图片高清大全大图 动物疫苗价格表图片高清大全大图及价格">动物疫苗价格表图片高清大全大图 动物疫苗价格表图片高清大全大图及价格</a></li>
+                        <li class="py-2"><a href="/news/article-52954.htm" title="动物接种视频教程（动物接种视频教程大全）">动物接种视频教程（动物接种视频教程大全）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-free-node-subscribe.htm" title="3月6日→23M/S|2025年最新免费节点Shadowrocket/Clash/SSR/V2ray订阅链接地址">3月6日→23M/S|2025年最新免费节点Shadowrocket/Clash/SSR/V2ray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-free-node-subscribe-links.htm" title="1月7日→22.2M/S|2025年最新免费节点Clash/SSR/V2ray/Shadowrocket订阅链接地址">1月7日→22.2M/S|2025年最新免费节点Clash/SSR/V2ray/Shadowrocket订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-48761.htm" title="免费领养宠物犬（免费领养宠物犬犯法吗）">免费领养宠物犬（免费领养宠物犬犯法吗）</a></li>
+                        <li class="py-2"><a href="/news/article-69471.htm" title="小型狗粮加工厂的流程图（办一个小型狗粮加工厂）">小型狗粮加工厂的流程图（办一个小型狗粮加工厂）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-31-free-subscribe-node.htm" title="1月31日→21.5M/S|2025年最新免费节点Shadowrocket/Clash/SSR/V2ray订阅链接地址">1月31日→21.5M/S|2025年最新免费节点Shadowrocket/Clash/SSR/V2ray订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
