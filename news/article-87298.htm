@@ -1,0 +1,204 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-87298.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>浅谈Java中空指针异常-java.lang.NullPointerException出现的几种原因及解决方案</title>
+        <meta name="description" content="说到空指针异常，你就得先了解什么是空？什么是指针？   什么是空？   举个例子：小红过生日，小明送给了小红送一个“礼物”，这个“礼物”只有一个外面的包装，而里面什么都没有，这个礼物就是""，而空则是" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash XW免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxw.github.io/news/article-87298.htm" />
+    <meta property="og:site_name" content="Clash XW免费机场节点分享官网" />
+    <meta property="og:title" content="浅谈Java中空指针异常-java.lang.NullPointerException出现的几种原因及解决方案" />
+    <meta property="og:image" content="https://clashxw.github.io/uploads/20241223/1a620c515558501f18075af45beb7e27.webp" />
+        <meta property="og:release_date" content="2025-04-03T08:29:27" />
+    <meta property="og:updated_time" content="2025-04-03T08:29:27" />
+        <meta property="og:description" content="说到空指针异常，你就得先了解什么是空？什么是指针？   什么是空？   举个例子：小红过生日，小明送给了小红送一个“礼物”，这个“礼物”只有一个外面的包装，而里面什么都没有，这个礼物就是""，而空则是" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="浅谈Java中空指针异常-java.lang.NullPointerException出现的几种原因及解决方案">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>浅谈Java中空指针异常-java.lang.NullPointerException出现的几种原因及解决方案</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p>说到空指针异常，你就得先了解什么是空？什么是指针？</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230112/374a96cc7c4a1d2707dbf3101fcd5bb6.jpg" alt="浅谈Java中空指针异常-java.lang.NullPointerException出现的几种原因及解决方案"></p> <h2> <a id="_4" rel="nofollow"></a>什么是空？</h2> <p>  举个例子：小红过生日，小明送给了小红送一个“礼物”，这个“礼物”只有一个外面的包装，而里面什么都没有，这个礼物就是""，而空则是小明压根没有给小红准备礼物，这个就是null。</p> <h2> <a id="_7" rel="nofollow"></a>什么是指针？</h2> <p>  指针：指针存放的是内存地址。</p> <p>所以：当指针不指向任何内存地址时，就叫做空指针，但是你偏偏在这时还调用了它，则会抛出空指针异常（<code>java.lang.NullPointerException</code>）</p> <p>例如：</p> <pre><code class="prism language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> array <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>array<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> <p>  这个时候原本array数组是个空指针，没有创建新的对象，在调用这个数组的时候就会产生空指针异常的错误！程序运行会显示<code>java.lang.NullPointerException</code>的异常提示。</p> <p><strong>为什么会产生空指针异常呢？</strong></p> <p>  这里我们用上面举的例子进行说明，<code>int[] array = null</code> 在内存中的栈内存中开辟了一个的存储空间叫做 array，而堆内存中并没有开辟int类型的数组空间，所以在栈内存中的 array 中没有存放任何内存地址，由此我们可以理解为什么会产生空指针异常，调用没有的东西显然是不可以的。</p> <p><font color="red" size="3">  大白话总结：空指针异常无非是因为对象为null的情况下去调用该对象所拥有的方法或者成员变量造成的。</font></p> <p>实际上空指针异常，也就是你用了一个没有实际值的对象，以下场景最常见：</p> <ul> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" checked="" disabled=""/> 某一对象没有被实例化，就拿来使用，即调用此对象的方法，会抛空指针异常；如：</li> </ul> <pre><code class="prism language-java"><span class="token comment">//错误写法1</span> <span class="token class-name">Map</span> map <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"姓名"</span><span class="token punctuation">,</span> <span class="token string">"张三"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//会报java.lang.NullPointerException</span>  <span class="token comment">//正确写法1</span> <span class="token class-name">Map</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedHashMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"姓名"</span><span class="token punctuation">,</span> <span class="token string">"张三"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//错误写法2</span> <span class="token class-name">List</span> lt <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> lt<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"哈哈哈"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//正确写法2</span> <span class="token class-name">List</span> lt <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> lt<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"哈哈哈"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre> <ul> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled=""/> 获取从别的对象传过来的对象为空，如：String str=null；</li> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled=""/> 数据库查询方面的空指针异常，如：数据库中储存的值为null或不存在；</li> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled=""/> 结果集是空的，或者未初始化就被调用了。</li> </ul> <p><strong>常见避免方案</strong></p> <ul> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" checked="" disabled=""/> 类型转换-优先使用<code>String.valueOf(XXX)</code>方法代替<code>XXX.toString()</code> </li> </ul> <p>  当程序代码需要对象的字符串表示形式时，请避免使用该对象的toString方法。如果你的对象的引用等于null，NullPointerException则会抛出，使用静态String.valueOf方法，该方法不会抛出任何异常并打印”null”.</p> <ul> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled=""/> 类初始化-优先使用实例化代替默认null</li> </ul> <p>  class被声明了类型， 默认 class = null; 这样在调用class中方法的时候系统只能给你个空指针异常， 给其实例化就好了：class = new Class();如：<code>List lt = new ArrayList();</code></p> <ul> <li class="task-list-item"> <input type="checkbox" class="task-list-item-checkbox" disabled=""/> 方法的返回值不要定义成为一般的类型，而是用数组。</li> </ul> <p>  这样如果想要返回null的时候，就返回一个没有元素的数组，能避免许多不必要的NullPointerException。</p> <p>  总之，<code>NullPointerException</code>是由<code>RuntimeException</code>派生出来的，是一个运行时异常，其意指可能会在运行的时候才会被抛出，一个变量是null,，即只有其名，没有实值内容，也没分配内存。当你要去取他的长度，对他进行操作就会出现<code>NullPointException</code>，所以声明变量时最好给它分配好内存空间，给予赋值。</p> <p>  例如拿该变量与一个值比较时，要么先做好该异常的处理，要么给它进行判断，如：</p> <pre><code class="prism language-java"><span class="token keyword">if</span> <span class="token punctuation">(</span>str <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>  <span class="token punctuation">}</span> </code></pre> <p>  判断一个String的实例a是否等于“b”时，不要写成<code>a.equals(“b”)</code>，这样容易抛<code>NullPointerException</code>，而写成<code>”b”.equals(a)</code>就可以避免这个问题，不过对变量先进行判空后再进行操作更好。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-86583.htm">被猫抓伤没有出血有红印（被猫抓伤没出血有血印）</a></p>
+                                        <p>下一个：<a href="/news/article-87299.htm">序列化多表操作、请求与响应、视图组件(子类与拓展类)、继承GenericAPIView类重写接口</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-73415.htm" title="那些年踩过的Java日期时间的坑">那些年踩过的Java日期时间的坑</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-node-share-links.htm" title="3月24日→18.7M/S|2025年最新免费节点Clash/Shadowrocket/V2ray/SSR订阅链接地址">3月24日→18.7M/S|2025年最新免费节点Clash/Shadowrocket/V2ray/SSR订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-68822.htm" title="动物防疫工作部署（2020年动物防疫工作计划）">动物防疫工作部署（2020年动物防疫工作计划）</a></li>
+                        <li class="py-2"><a href="/news/article-78142.htm" title="猫三联是三针还是一针打完（猫三联是几针啊）">猫三联是三针还是一针打完（猫三联是几针啊）</a></li>
+                        <li class="py-2"><a href="/news/article-82290.htm" title="上海宠物狗领养网站有哪些公司（上海宠物狗领养网站有哪些公司名称）">上海宠物狗领养网站有哪些公司（上海宠物狗领养网站有哪些公司名称）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-1-free-high-speed-nodes.htm" title="4月1日→20.2M/S|2025年最新免费节点Shadowrocket/Clash/SSR/V2ray订阅链接地址">4月1日→20.2M/S|2025年最新免费节点Shadowrocket/Clash/SSR/V2ray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-22-free-node-subscribe.htm" title="3月22日→22.1M/S|2025年最新免费节点SSR/Shadowrocket/V2ray/Clash订阅链接地址">3月22日→22.1M/S|2025年最新免费节点SSR/Shadowrocket/V2ray/Clash订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-3-free-node-subscribe-links.htm" title="4月3日→21.1M/S|2025年最新免费节点V2ray/Clash/Shadowrocket/SSR订阅链接地址">4月3日→21.1M/S|2025年最新免费节点V2ray/Clash/Shadowrocket/SSR订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-7-free-high-speed-nodes.htm" title="3月7日→19.9M/S|2025年最新免费节点Clash/Shadowrocket/V2ray/SSR订阅链接地址">3月7日→19.9M/S|2025年最新免费节点Clash/Shadowrocket/V2ray/SSR订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-80913.htm" title="宠物粮市场前景分析论文 宠物粮市场前景分析论文怎么写">宠物粮市场前景分析论文 宠物粮市场前景分析论文怎么写</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                    <p>
+                        <a href="/">首页</a> |
+                        <a href="/free-node/">免费节点</a> |
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
