@@ -1,0 +1,209 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxw.github.io/news/article-109449.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>有关vue3中vuex mapStates、mapMutations 和 mapActions的自定义方法</title>
+        <meta name="description" content="有关vue3中vuex mapStates、mapMutations 和 mapActions的自定义方法 重写原因：vue3中一般常用setup语法，会发现如果像vue2.0里一样使用vuex自带的" />
+        <link rel="icon" href="/assets/website/img/clashxw/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash XW免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxw.github.io/news/article-109449.htm" />
+    <meta property="og:site_name" content="Clash XW免费机场节点分享官网" />
+    <meta property="og:title" content="有关vue3中vuex mapStates、mapMutations 和 mapActions的自定义方法" />
+    <meta property="og:image" content="https://clashxw.github.io/uploads/20241223/d798eed131f30cd11bc63de42929e690.webp" />
+        <meta property="og:release_date" content="2025-05-02T09:22:17" />
+    <meta property="og:updated_time" content="2025-05-02T09:22:17" />
+        <meta property="og:description" content="有关vue3中vuex mapStates、mapMutations 和 mapActions的自定义方法 重写原因：vue3中一般常用setup语法，会发现如果像vue2.0里一样使用vuex自带的" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="有关vue3中vuex mapStates、mapMutations 和 mapActions的自定义方法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- all css here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxw/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/icons.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/plugins.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxw/responsive.css">
+    <script src="/assets/website/js/frontend/clashxw/vendor/modernizr-2.8.3.min.js"></script>
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZT78WPNQW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8ZT78WPNQW');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- header start -->
+    <header class="header-area transparent-bar header-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-5 col-sm-4">
+                    <div class="logo">
+                        <a href="/">
+                                                        <span>Clash XW</span>
+                                                    </a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-7 col-sm-8">
+                    <div class="menu-search-bundle">
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area d-md-block d-block col-md-12 col-lg-12 col-12 d-lg-none d-xl-none">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                                                <li><a href="/">首页</a></li>
+                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                <li><a href="#">关于</a></li>
+                                <li><a href="#">联系</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/website/img/clashxw/banner/breath.jpg);">
+        <div class="container">
+            <div class="breadcrumb-content text-center">
+                <h1>有关vue3中vuex mapStates、mapMutations 和 mapActions的自定义方法</h1>
+                <ul>
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <li>
+                        <a href="/news/">新闻资讯</a>
+                    </li>
+                    <li class="active">正文</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="about-area ptb-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2><a id="vue3vuex_mapStatesmapMutations__mapActions_0" rel="nofollow"></a>有关vue3中vuex mapStates、mapMutations 和 mapActions的自定义方法</h2> <p>重写原因：vue3中一般常用setup语法，会发现如果像vue2.0里一样使用vuex自带的mapStates、mapMutations和mapActions自动映射会发现效果并不如意，所以我就自定义了这三个方法，用来在vue3中setup使用。<br /> 代码如下：</p> <pre><code class="prism language-js"><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span>useStore<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">"vuex"</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token punctuation">{<!-- --></span>reactive<span class="token punctuation">,</span> computed<span class="token punctuation">}</span><span class="token keyword">from</span><span class="token string">"vue"</span><span class="token punctuation">;</span><span class="token keyword">export</span><span class="token punctuation">{<!-- --></span>     mapStates<span class="token punctuation">,</span> mapMutations<span class="token punctuation">,</span> mapActions<span class="token punctuation">}</span><span class="token comment">/**  * 自动映射store对应的state属性  * @returns {ComputedRef&lt;*&gt;|null|UnwrapNestedRefs&lt;{}&gt;}  * @author 园丁  * @date 2022/4/10  * @example const user = mapStates("user") 单个使用是OK的，多个好像无法响应  */</span><span class="token keyword">function</span><span class="token function">mapStates</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">const</span> store<span class="token operator">=</span><span class="token function">useStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">if</span><span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length<span class="token operator">===</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">let</span> mapper<span class="token operator">=</span> arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> mapper<span class="token operator">===</span><span class="token string">"string"</span><span class="token operator">&amp;&amp;</span> mapper<span class="token punctuation">.</span>length<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token function">computed</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span> store<span class="token punctuation">.</span>state<span class="token punctuation">[</span>mapper<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token comment">// 这边参数如果是数组的话，会出现页面数据无法响应式更新问题，希望有大佬帮忙解决</span><span class="token keyword">if</span><span class="token punctuation">(</span>mapper<span class="token keyword">instanceof</span><span class="token class-name">Array</span><span class="token operator">&amp;&amp;</span> mapper<span class="token punctuation">.</span>length<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">let</span> mappers<span class="token operator">=</span><span class="token function">reactive</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">)</span>             mapper<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span>                 mappers<span class="token punctuation">[</span>item<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">mapStates</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token keyword">return</span> mappers<span class="token punctuation">}</span><span class="token punctuation">}</span>     console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"使用方法有误，请检查输入参数的格式！"</span><span class="token punctuation">)</span><span class="token keyword">return</span><span class="token keyword">null</span><span class="token punctuation">}</span><span class="token comment">/**  * 自动映射store对应的Mutation方法  * @returns {(function(*): void)|*|UnwrapNestedRefs&lt;{}&gt;|UnwrapNestedRefs&lt;{}&gt;}  * @author 园丁  * @date 2022/4/10  * @example const {refreshVerificationCode} = mapMutations(["refreshVerificationCode"])  */</span><span class="token keyword">function</span><span class="token function">mapMutations</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">const</span> store<span class="token operator">=</span><span class="token function">useStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">if</span><span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length<span class="token operator">===</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">let</span> mapper<span class="token operator">=</span> arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> mapper<span class="token operator">===</span><span class="token string">"string"</span><span class="token operator">&amp;&amp;</span> mapper<span class="token punctuation">.</span>length<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token parameter">param</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span>                 store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span>mapper<span class="token punctuation">,</span> param<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token keyword">if</span><span class="token punctuation">(</span>mapper<span class="token keyword">instanceof</span><span class="token class-name">Array</span><span class="token operator">&amp;&amp;</span> mapper<span class="token punctuation">.</span>length<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">let</span> mappers<span class="token operator">=</span><span class="token function">reactive</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">)</span>             mapper<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span>                 mappers<span class="token punctuation">[</span>item<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">mapMutations</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token keyword">return</span> mappers<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token keyword">if</span><span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length<span class="token operator">===</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">const</span> moduleName<span class="token operator">=</span> arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token keyword">const</span> mapper<span class="token operator">=</span> arguments<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> moduleName<span class="token operator">!==</span><span class="token string">"string"</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>             console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"传入的moduleName类型或格式错误！"</span><span class="token punctuation">)</span><span class="token keyword">return</span><span class="token keyword">null</span><span class="token punctuation">}</span><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> mapper<span class="token operator">===</span><span class="token string">"string"</span><span class="token operator">&amp;&amp;</span> mapper<span class="token punctuation">.</span>length<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">let</span> mapperName<span class="token operator">=</span> moduleName<span class="token operator">+</span><span class="token string">"/"</span><span class="token operator">+</span> mapper<span class="token keyword">return</span><span class="token function">mapMutations</span><span class="token punctuation">(</span>mapperName<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token keyword">if</span><span class="token punctuation">(</span>mapper<span class="token keyword">instanceof</span><span class="token class-name">Array</span><span class="token operator">&amp;&amp;</span> mapper<span class="token punctuation">.</span>length<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">let</span> mappers<span class="token operator">=</span><span class="token function">reactive</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">)</span>             mapper<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span>                 mappers<span class="token punctuation">[</span>item<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">mapMutations</span><span class="token punctuation">(</span>moduleName<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token keyword">return</span> mappers<span class="token punctuation">}</span><span class="token punctuation">}</span>     console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"使用方法有误，请检查输入参数的格式！"</span><span class="token punctuation">)</span><span class="token keyword">return</span><span class="token keyword">null</span><span class="token punctuation">}</span><span class="token comment">/**  * 自动映射store对应的Action方法  * @returns {(function(*): Promise&lt;unknown&gt;)|(function(*): Promise&lt;unknown&gt;)|UnwrapNestedRefs&lt;{}&gt;|*|UnwrapNestedRefs&lt;{}&gt;}  * @author 园丁  * @date 2022/4/10  * @example const {refreshVerificationCode} = mapActions(["refreshVerificationCode"])  */</span><span class="token keyword">function</span><span class="token function">mapActions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">const</span> store<span class="token operator">=</span><span class="token function">useStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">if</span><span class="token punctuation">(</span>arguments<span class="token punctuation">.</span>length<span class="token operator">===</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">let</span> mapper<span class="token operator">=</span> arguments<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> mapper<span class="token operator">===</span><span class="token string">"string"</span><span class="token operator">&amp;&amp;</span> mapper<span class="token punctuation">.</span>length<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token parameter">param</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">new</span><span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span>                     store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span>mapper<span class="token punctuation">,</span> param<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token operator">=&gt;</span><span class="token function">resolve</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token operator">=&gt;</span><span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token keyword">if</span><span class="token punctuation">(</span>mapper<span class="token keyword">instanceof</span><span class="token class-name">Array</span><span class="token operator">&amp;&amp;</span> mapper<span class="token punctuation">.</span>length<span class="token operator">&gt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">let</span> mappers<span class="token operator">=</span><span class="token function">reactive</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">}</span><span class="token punctuation">)</span>             mapper<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token operator">=&gt;</span><span class="token punctuation">{<!-- --></span>                 mappers<span class="token punctuation">[</span>item<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">mapActions</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token keyword">return</span> mappers<span class="token punctuation">}</span><span class="token punctuation">}</span>     console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"使用方法有误，请检查输入参数的格式！"</span><span class="token punctuation">)</span><span class="token keyword">return</span><span class="token keyword">null</span><span class="token punctuation">}</span></code></pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-109448.htm">Java Web 部署了Tomcat之后无法使用servlet类 的解决方法</a></p>
+                                        <p>下一个：<a href="/news/article-110295.htm">Mybatis学习之程序编译后在target/classes目录下找不到主配置文件或sql映射文件（sql mapper）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-90241.htm" title="宠物粮食专卖店电话多少 宠物粮食专卖店电话多少号">宠物粮食专卖店电话多少 宠物粮食专卖店电话多少号</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-27-free-high-speed-nodes.htm" title="4月27日→18.3M/S|2025年最新免费节点SSR/Clash/Shadowrocket/V2ray订阅链接地址">4月27日→18.3M/S|2025年最新免费节点SSR/Clash/Shadowrocket/V2ray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-11-free-subscribe-node.htm" title="4月11日→22.7M/S|2025年最新免费节点SSR/Shadowrocket/Clash/V2ray订阅链接地址">4月11日→22.7M/S|2025年最新免费节点SSR/Shadowrocket/Clash/V2ray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-109448.htm" title="Java Web 部署了Tomcat之后无法使用servlet类 的解决方法">Java Web 部署了Tomcat之后无法使用servlet类 的解决方法</a></li>
+                        <li class="py-2"><a href="/news/article-101255.htm" title="中国农业大学动物医院在哪里啊（中国农业大学动物医院地址）">中国农业大学动物医院在哪里啊（中国农业大学动物医院地址）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-17-node-share-links.htm" title="4月17日→20.4M/S|2025年最新免费节点Clash/SSR/Shadowrocket/V2ray订阅链接地址">4月17日→20.4M/S|2025年最新免费节点Clash/SSR/Shadowrocket/V2ray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-13-free-node-subscribe.htm" title="4月13日→19.5M/S|2025年最新免费节点SSR/V2ray/Shadowrocket/Clash订阅链接地址">4月13日→19.5M/S|2025年最新免费节点SSR/V2ray/Shadowrocket/Clash订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-91704.htm" title="简述动物疫苗免疫失败的原因 简述动物疫苗免疫失败的原因有哪些">简述动物疫苗免疫失败的原因 简述动物疫苗免疫失败的原因有哪些</a></li>
+                        <li class="py-2"><a href="/news/article-100634.htm" title="基本数据类型和引用数据类型">基本数据类型和引用数据类型</a></li>
+                        <li class="py-2"><a href="/news/article-100635.htm" title="布偶猫很少有人养（布偶不好养吗）">布偶猫很少有人养（布偶不好养吗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">86</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer-area">
+        <div class="footer-bottom black-bg-2 pb-25 pt-25">
+            <div class="container">
+                <div class="copyright text-center">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Clash XW免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- all js here -->
+    <script src="/assets/website/js/frontend/clashxw/vendor/jquery-1.12.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/popper.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/ajax-mail.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxw/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
