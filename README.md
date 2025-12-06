@@ -1,4 +1,4 @@
-# 11月29日→22.8M/S|2025年最新免费节点SSR节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点订阅链接地址  更新时间 2025-11-29 08:53:05
+# 12月6日→21.2M/S|2025年最新免费节点Shadowrocket节点/SSR节点/Clash节点/Singbox节点/V2ray节点订阅链接地址  更新时间 2025-12-06 12:52:45
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashxw.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://clashxw.github.io/uploads/2025/11/0-20251129.yaml
-- https://clashxw.github.io/uploads/2025/11/1-20251129.yaml
-- https://clashxw.github.io/uploads/2025/11/2-20251129.yaml
-- https://clashxw.github.io/uploads/2025/11/3-20251129.yaml
-- https://clashxw.github.io/uploads/2025/11/4-20251129.yaml
+- https://clashxw.github.io/uploads/2025/12/0-20251206.yaml
+- https://clashxw.github.io/uploads/2025/12/1-20251206.yaml
+- https://clashxw.github.io/uploads/2025/12/2-20251206.yaml
+- https://clashxw.github.io/uploads/2025/12/3-20251206.yaml
+- https://clashxw.github.io/uploads/2025/12/4-20251206.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://clashxw.github.io/uploads/2025/11/0-20251129.txt
-- https://clashxw.github.io/uploads/2025/11/1-20251129.txt
-- https://clashxw.github.io/uploads/2025/11/2-20251129.txt
-- https://clashxw.github.io/uploads/2025/11/3-20251129.txt
-- https://clashxw.github.io/uploads/2025/11/4-20251129.txt
+- https://clashxw.github.io/uploads/2025/12/0-20251206.txt
+- https://clashxw.github.io/uploads/2025/12/1-20251206.txt
+- https://clashxw.github.io/uploads/2025/12/2-20251206.txt
+- https://clashxw.github.io/uploads/2025/12/3-20251206.txt
+- https://clashxw.github.io/uploads/2025/12/4-20251206.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://clashxw.github.io/uploads/2025/11/20251129.json
+- https://clashxw.github.io/uploads/2025/12/20251206.json
 
 ## 更多Clash节点订阅 ：
 
