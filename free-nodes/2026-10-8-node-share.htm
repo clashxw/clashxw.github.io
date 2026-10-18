@@ -277,39 +277,9 @@ Clash加速器支持根据延迟、带宽等因素选择最适合的节点，使
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何在 Clash Premium 中使用 TUN 模式加速游戏？</h5></div>
-    <div class="panel-body">
-        Clash Premium 版本支持系统级 TUN 模式，可将所有 UDP 流量转发至代理节点。启用该模式后需管理员权限，并在配置文件中添加 dns 与 tun 模块，选择低延迟节点即可实现游戏加速。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 可以做什么？</h5></div>
-    <div class="panel-body">
-        Netch 是一款 Windows 平台的网络加速工具，支持基于 V2Ray、Socks5、Shadowsocks 等协议的代理。它可用于加速游戏、视频或网站访问，并能通过 TAP 模式实现系统级代理，广受游戏玩家喜爱。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 是否支持系统代理？</h5></div>
-    <div class="panel-body">
-        Netch 不直接修改系统代理，而是通过虚拟网卡（TAP 驱动）实现透明代理。这种方式不会影响浏览器设置，适合游戏和应用程序需要 UDP 支持的场景。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 如何实现节点延迟自动切换？</h5></div>
-    <div class="panel-body">
-        Nekoray 支持配置策略组（Policy Group），用户可设置 URL 测试或周期检测机制，根据延迟自动选择最优节点。此功能能提升稳定性，尤其适合多线路机场订阅用户。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 如何防止规则文件冲突导致分流异常？</h5></div>
     <div class="panel-body">
         合理组织规则顺序，将更具体的规则放在前面，通配规则放在末尾；使用 rule-providers 分离不同来源的规则，避免重复条目，并在变更后使用日志或 debug 模式检验分流是否按预期生效。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess AEAD 加密在高封锁环境的优势？</h5></div>
-    <div class="panel-body">
-        AEAD 加密可防止数据篡改和流量特征泄露，降低被检测风险。在高封锁网络中，保证节点可用性和连接稳定性，同时提升数据传输安全性，确保长期安全访问。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 支持 Hysteria 协议吗？</h5></div>
-    <div class="panel-body">
-        新版本的 WinXray 已整合了 V2Ray 内核更新，支持 Hysteria 协议。用户可通过导入 Clash 或 sing-box 类型的订阅使用基于 QUIC 的高性能连接，速度和稳定性均更出色。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VMess AEAD 加密在高封锁网络的作用？</h5></div>
@@ -317,14 +287,44 @@ Clash加速器支持根据延迟、带宽等因素选择最适合的节点，使
         AEAD 加密可防止数据篡改和流量特征泄露，降低被封锁和 DPI 检测风险。保证节点长期可用，提高数据传输安全性和访问可靠性，优化用户科学上网体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess AEAD 加密在高封锁环境的优势？</h5></div>
+    <div class="panel-body">
+        AEAD 加密可防止数据篡改和流量特征泄露，降低被检测风险。在高封锁网络中，保证节点可用性和连接稳定性，同时提升数据传输安全性，确保长期安全访问。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 如何实现节点延迟自动切换？</h5></div>
+    <div class="panel-body">
+        Nekoray 支持配置策略组（Policy Group），用户可设置 URL 测试或周期检测机制，根据延迟自动选择最优节点。此功能能提升稳定性，尤其适合多线路机场订阅用户。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何在 Clash Premium 中使用 TUN 模式加速游戏？</h5></div>
+    <div class="panel-body">
+        Clash Premium 版本支持系统级 TUN 模式，可将所有 UDP 流量转发至代理节点。启用该模式后需管理员权限，并在配置文件中添加 dns 与 tun 模块，选择低延迟节点即可实现游戏加速。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mihomo 是什么项目？</h5></div>
+    <div class="panel-body">
+        Mihomo 是 Clash Meta 的继任版本，也被称为 Clash.Meta 的社区分支。它优化了性能，支持更多协议如 Hysteria2、TUIC 等，同时提供更灵活的规则匹配系统，是目前非常流行的分流代理核心。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 是否支持系统代理？</h5></div>
+    <div class="panel-body">
+        Netch 不直接修改系统代理，而是通过虚拟网卡（TAP 驱动）实现透明代理。这种方式不会影响浏览器设置，适合游戏和应用程序需要 UDP 支持的场景。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 支持 Hysteria 协议吗？</h5></div>
+    <div class="panel-body">
+        新版本的 WinXray 已整合了 V2Ray 内核更新，支持 Hysteria 协议。用户可通过导入 Clash 或 sing-box 类型的订阅使用基于 QUIC 的高性能连接，速度和稳定性均更出色。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>VLESS + XTLS 模式在高并发下有什么优势？</h5></div>
     <div class="panel-body">
         XTLS 模式减少握手次数和加密冗余，提高 CPU 利用率和吞吐量。在高并发场景下能保持连接稳定，适合游戏、流媒体和频繁请求的网络环境，提升整体性能。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 是什么项目？</h5></div>
+    <div class="panel-heading"><h5>Netch 可以做什么？</h5></div>
     <div class="panel-body">
-        Mihomo 是 Clash Meta 的继任版本，也被称为 Clash.Meta 的社区分支。它优化了性能，支持更多协议如 Hysteria2、TUIC 等，同时提供更灵活的规则匹配系统，是目前非常流行的分流代理核心。    </div>
+        Netch 是一款 Windows 平台的网络加速工具，支持基于 V2Ray、Socks5、Shadowsocks 等协议的代理。它可用于加速游戏、视频或网站访问，并能通过 TAP 模式实现系统级代理，广受游戏玩家喜爱。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -372,16 +372,16 @@ Clash加速器支持根据延迟、带宽等因素选择最适合的节点，使
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-9-6-node-share.htm" title="9月6日→19.7M/S|2025年最新免费节点Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/V2ray节点/SSR节点订阅链接地址">9月6日→19.7M/S|2025年最新免费节点Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/V2ray节点/SSR节点订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-9-9.htm" title="9月9日→18.2M/S|2025年最新免费节点SSR节点/Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/Clash节点订阅链接地址">9月9日→18.2M/S|2025年最新免费节点SSR节点/Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/Clash节点订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-30-free-subscribe-node.htm" title="9月30日→18.8M/S|2025年最新免费节点Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Trojan节点/Singbox节点订阅链接地址">9月30日→18.8M/S|2025年最新免费节点Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Trojan节点/Singbox节点订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/node-share-links-2026-10-5.htm" title="10月5日→19.9M/S|2025年最新免费节点SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点订阅链接地址">10月5日→19.9M/S|2025年最新免费节点SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-20-free-node-subscribe.htm" title="9月20日→20.8M/S|2025年最新免费节点Trojan节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点订阅链接地址">9月20日→20.8M/S|2025年最新免费节点Trojan节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-10-7.htm" title="10月7日→18.3M/S|2025年最新免费节点SSR节点/Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/Clash节点订阅链接地址">10月7日→18.3M/S|2025年最新免费节点SSR节点/Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/Clash节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-10-15.htm" title="10月15日→23M/S|2025年最新免费节点Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点订阅链接地址">10月15日→23M/S|2025年最新免费节点Trojan节点/Shadowrocket节点/Singbox节点/V2ray节点/Clash节点/SSR节点订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-19.htm" title="9月19日→18.3M/S|2025年最新免费节点Trojan节点/Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点订阅链接地址">9月19日→18.3M/S|2025年最新免费节点Trojan节点/Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-28-free-node-subscribe.htm" title="9月28日→19M/S|2025年最新免费节点Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点订阅链接地址">9月28日→19M/S|2025年最新免费节点Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-10-node-share.htm" title="9月10日→21.1M/S|2025年最新免费节点Singbox节点/Clash节点/SSR节点/Shadowrocket节点/Trojan节点/V2ray节点订阅链接地址">9月10日→21.1M/S|2025年最新免费节点Singbox节点/Clash节点/SSR节点/Shadowrocket节点/Trojan节点/V2ray节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-16-free-subscribe-node.htm" title="9月16日→22.5M/S|2025年最新免费节点SSR节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/Clash节点订阅链接地址">9月16日→22.5M/S|2025年最新免费节点SSR节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/Clash节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-27.htm" title="9月27日→19.2M/S|2025年最新免费节点Shadowrocket节点/SSR节点/Trojan节点/Clash节点/V2ray节点/Singbox节点订阅链接地址">9月27日→19.2M/S|2025年最新免费节点Shadowrocket节点/SSR节点/Trojan节点/Clash节点/V2ray节点/Singbox节点订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-3.htm" title="9月3日→21.3M/S|2025年最新免费节点SSR节点/Trojan节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点订阅链接地址">9月3日→21.3M/S|2025年最新免费节点SSR节点/Trojan节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-21.htm" title="9月21日→22.5M/S|2025年最新免费节点SSR节点/Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点订阅链接地址">9月21日→22.5M/S|2025年最新免费节点SSR节点/Trojan节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-1.htm" title="10月1日→20.7M/S|2025年最新免费节点Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点订阅链接地址">10月1日→20.7M/S|2025年最新免费节点Clash节点/Singbox节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-23.htm" title="9月23日→20.3M/S|2025年最新免费节点Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Singbox节点/Trojan节点订阅链接地址">9月23日→20.3M/S|2025年最新免费节点Shadowrocket节点/Clash节点/V2ray节点/SSR节点/Singbox节点/Trojan节点订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-4-node-share.htm" title="10月4日→19.3M/S|2025年最新免费节点Trojan节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点订阅链接地址">10月4日→19.3M/S|2025年最新免费节点Trojan节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点订阅链接地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -393,7 +393,7 @@ Clash加速器支持根据延迟、带宽等因素选择最适合的节点，使
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">10</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
